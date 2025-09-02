@@ -1,0 +1,2454 @@
+{
+  "categories": [
+    {
+      "name": "Hardware",
+      "questions": [
+        {
+          "id": "QC_HW001",
+          "question": "What does CPU stand for?",
+          "options": [
+            "Central Processing Unit",
+            "Computer Personal Unit",
+            "Core Processing Unit",
+            "Central Power Unit"
+          ],
+          "answer": 0,
+          "explanation": "CPU is the main processor that executes instructions."
+        },
+        {
+          "id": "QC_HW002",
+          "question": "What is the primary purpose of RAM?",
+          "options": [
+            "Permanent storage",
+            "Temporary working memory",
+            "Rendering graphics",
+            "Providing power"
+          ],
+          "answer": 1,
+          "explanation": "RAM stores data temporarily for fast access by the CPU."
+        },
+        {
+          "id": "QC_HW003",
+          "question": "Which device provides long-term persistent storage?",
+          "options": [
+            "SSD/HDD",
+            "RAM",
+            "Cache",
+            "GPU"
+          ],
+          "answer": 0,
+          "explanation": "SSDs and HDDs retain data when power is off."
+        },
+        {
+          "id": "QC_HW004",
+          "question": "Which component renders graphics and video?",
+          "options": [
+            "GPU",
+            "CPU",
+            "Motherboard",
+            "PSU"
+          ],
+          "answer": 0,
+          "explanation": "The GPU accelerates graphics processing."
+        },
+        {
+          "id": "QC_HW005",
+          "question": "Which component connects and allows communication between all parts?",
+          "options": [
+            "Motherboard",
+            "Power supply",
+            "Heatsink",
+            "Case"
+          ],
+          "answer": 0,
+          "explanation": "The motherboard hosts CPU, RAM, storage, and expansion slots."
+        },
+        {
+          "id": "QC_HW006",
+          "question": "What does SSD stand for?",
+          "options": [
+            "Solid State Drive",
+            "Secure Storage Disk",
+            "Serial Storage Device",
+            "Standard State Disk"
+          ],
+          "answer": 0,
+          "explanation": "SSD is a storage device using flash memory."
+        },
+        {
+          "id": "QC_HW007",
+          "question": "Which port is reversible and commonly used for charging and data?",
+          "options": [
+            "USB-C",
+            "VGA",
+            "DVI",
+            "RJ-45"
+          ],
+          "answer": 0,
+          "explanation": "USB-C is a reversible connector supporting power and data."
+        },
+        {
+          "id": "QC_HW008",
+          "question": "Which measurement represents processor speed?",
+          "options": [
+            "GHz",
+            "GB",
+            "dpi",
+            "fps"
+          ],
+          "answer": 0,
+          "explanation": "GHz (gigahertz) measures clock frequency."
+        },
+        {
+          "id": "QC_HW009",
+          "question": "What does PSU stand for?",
+          "options": [
+            "Power Supply Unit",
+            "Processing Storage Unit",
+            "Peripheral Setup Utility",
+            "Primary Supply Unit"
+          ],
+          "answer": 0,
+          "explanation": "The PSU converts AC to DC to power components."
+        },
+        {
+          "id": "QC_HW010",
+          "question": "Which component stores the firmware that starts the computer?",
+          "options": [
+            "BIOS/UEFI chip",
+            "GPU",
+            "NVMe drive",
+            "Sound card"
+          ],
+          "answer": 0,
+          "explanation": "BIOS/UEFI initializes hardware during boot."
+        },
+        {
+          "id": "QC_HW011",
+          "question": "Which is an example of an input device?",
+          "options": [
+            "Keyboard",
+            "Monitor",
+            "Printer",
+            "Projector"
+          ],
+          "answer": 0,
+          "explanation": "Keyboards send user input to the computer."
+        },
+        {
+          "id": "QC_HW012",
+          "question": "Which connector is used for wired Ethernet networking?",
+          "options": [
+            "RJ-45",
+            "HDMI",
+            "USB-A",
+            "3.5mm jack"
+          ],
+          "answer": 0,
+          "explanation": "RJ-45 connectors are used with Ethernet cables."
+        },
+        {
+          "id": "QC_HW013",
+          "question": "Which slot is used for modern graphics cards?",
+          "options": [
+            "PCIe x16",
+            "AGP",
+            "ISA",
+            "PCI"
+          ],
+          "answer": 0,
+          "explanation": "PCI Express x16 provides high bandwidth for GPUs."
+        },
+        {
+          "id": "QC_HW014",
+          "question": "Which is faster for storage: SATA SSD or NVMe SSD?",
+          "options": [
+            "NVMe SSD",
+            "SATA SSD",
+            "They are the same",
+            "HDD"
+          ],
+          "answer": 0,
+          "explanation": "NVMe SSDs use PCIe lanes with much higher throughput."
+        },
+        {
+          "id": "QC_HW015",
+          "question": "What is the purpose of a heatsink and fan on a CPU?",
+          "options": [
+            "Cooling",
+            "Power delivery",
+            "Data storage",
+            "Signal boosting"
+          ],
+          "answer": 0,
+          "explanation": "They dissipate heat to keep the CPU within safe temperatures."
+        },
+        {
+          "id": "QC_HW016",
+          "question": "Which unit measures storage capacity?",
+          "options": [
+            "Gigabyte (GB)",
+            "Gigahertz (GHz)",
+            "Lumens",
+            "Ohms"
+          ],
+          "answer": 0,
+          "explanation": "Storage is measured in bytes (KB, MB, GB, TB)."
+        },
+        {
+          "id": "QC_HW017",
+          "question": "What does GPU stand for?",
+          "options": [
+            "Graphics Processing Unit",
+            "General Processing Unit",
+            "Graphics Power Utility",
+            "Global Processing Unit"
+          ],
+          "answer": 0,
+          "explanation": "GPU handles parallel computations for graphics and compute."
+        },
+        {
+          "id": "QC_HW018",
+          "question": "Which component keeps time and BIOS settings when PC is off?",
+          "options": [
+            "CMOS battery",
+            "PSU",
+            "RAM",
+            "NIC"
+          ],
+          "answer": 0,
+          "explanation": "The CMOS battery powers RTC and stores firmware settings."
+        },
+        {
+          "id": "QC_HW019",
+          "question": "Which display connector supports audio and video with a compact form?",
+          "options": [
+            "HDMI",
+            "VGA",
+            "DVI",
+            "DisplayPort"
+          ],
+          "answer": 0,
+          "explanation": "HDMI carries digital video and audio."
+        },
+        {
+          "id": "QC_HW020",
+          "question": "Which form factor describes a common desktop motherboard size?",
+          "options": [
+            "ATX",
+            "SODIMM",
+            "M.2",
+            "LGA"
+          ],
+          "answer": 0,
+          "explanation": "ATX is a widely used motherboard form factor."
+        }
+      ]
+    },
+    {
+      "name": "Operating Systems",
+      "questions": [
+        {
+          "id": "QC_OS001",
+          "question": "Which of the following is NOT an operating system?",
+          "options": [
+            "Windows",
+            "Linux",
+            "Oracle",
+            "macOS"
+          ],
+          "answer": 2,
+          "explanation": "Oracle is primarily known as a database; it's not an OS."
+        },
+        {
+          "id": "QC_OS002",
+          "question": "Primary purpose of an operating system is to:",
+          "options": [
+            "Manage hardware/software resources",
+            "Design websites",
+            "Compile code only",
+            "Print documents"
+          ],
+          "answer": 0,
+          "explanation": "The OS manages CPU, memory, devices, and files."
+        },
+        {
+          "id": "QC_OS003",
+          "question": "Which OS is open-source and widely used on servers?",
+          "options": [
+            "Windows",
+            "Linux",
+            "macOS",
+            "Chrome OS"
+          ],
+          "answer": 1,
+          "explanation": "Linux distributions power many servers."
+        },
+        {
+          "id": "QC_OS004",
+          "question": "Mobile devices typically run:",
+          "options": [
+            "iOS/Android",
+            "Windows/macOS",
+            "Unix/AS400",
+            "DOS/Windows 3.1"
+          ],
+          "answer": 0,
+          "explanation": "Smartphones commonly use iOS or Android."
+        },
+        {
+          "id": "QC_OS005",
+          "question": "What is the kernel?",
+          "options": [
+            "Core that manages resources",
+            "Antivirus program",
+            "GUI theme",
+            "Bootloader name"
+          ],
+          "answer": 0,
+          "explanation": "Kernel is the core component of an OS."
+        },
+        {
+          "id": "QC_OS006",
+          "question": "Multitasking means:",
+          "options": [
+            "Running multiple processes seemingly at once",
+            "Installing multiple OSes",
+            "Connecting multiple monitors",
+            "Using multiple keyboards"
+          ],
+          "answer": 0,
+          "explanation": "OS schedules CPU time across processes."
+        },
+        {
+          "id": "QC_OS007",
+          "question": "What does GUI stand for?",
+          "options": [
+            "Graphical User Interface",
+            "General Utility Input",
+            "Global User Integration",
+            "Graph Utility Index"
+          ],
+          "answer": 0,
+          "explanation": "GUI provides windows, icons, and menus."
+        },
+        {
+          "id": "QC_OS008",
+          "question": "Virtual memory uses:",
+          "options": [
+            "Disk space to extend RAM",
+            "GPU memory to speed apps",
+            "Cloud space for backups",
+            "ROM to cache files"
+          ],
+          "answer": 0,
+          "explanation": "Paging uses storage as extra memory."
+        },
+        {
+          "id": "QC_OS009",
+          "question": "Which introduced the Start Menu?",
+          "options": [
+            "Windows 95",
+            "Windows XP",
+            "Windows 7",
+            "Windows 10"
+          ],
+          "answer": 0,
+          "explanation": "Windows 95 debuted the Start Menu."
+        },
+        {
+          "id": "QC_OS010",
+          "question": "A command-line OS used before GUIs became mainstream:",
+          "options": [
+            "MS-DOS",
+            "Ubuntu",
+            "Windows 11",
+            "Android"
+          ],
+          "answer": 0,
+          "explanation": "MS-DOS was a widely used CLI OS."
+        },
+        {
+          "id": "QC_OS011",
+          "question": "Which OS is developed by Apple for Macs?",
+          "options": [
+            "Ubuntu",
+            "Windows",
+            "macOS",
+            "Fedora"
+          ],
+          "answer": 2,
+          "explanation": "macOS is Apple's desktop OS."
+        },
+        {
+          "id": "QC_OS012",
+          "question": "Which OS is designed by Google for Chromebooks?",
+          "options": [
+            "Android",
+            "Chrome OS",
+            "Debian",
+            "FreeBSD"
+          ],
+          "answer": 1,
+          "explanation": "Chrome OS powers Chromebooks."
+        },
+        {
+          "id": "QC_OS013",
+          "question": "Which is an example of a real-time OS?",
+          "options": [
+            "FreeRTOS",
+            "Windows 7",
+            "Ubuntu",
+            "macOS"
+          ],
+          "answer": 0,
+          "explanation": "FreeRTOS is used in embedded systems."
+        },
+        {
+          "id": "QC_OS014",
+          "question": "Booting refers to:",
+          "options": [
+            "Starting the OS",
+            "Shutting down",
+            "Installing drivers",
+            "Formatting disks"
+          ],
+          "answer": 0,
+          "explanation": "Booting loads the OS into memory."
+        },
+        {
+          "id": "QC_OS015",
+          "question": "Unix originated in which decade?",
+          "options": [
+            "1970s",
+            "1990s",
+            "2010s",
+            "1950s"
+          ],
+          "answer": 0,
+          "explanation": "Unix was developed in the early 1970s."
+        },
+        {
+          "id": "QC_OS016",
+          "question": "Which OS was made for early IBM PCs?",
+          "options": [
+            "MS-DOS",
+            "Linux",
+            "Windows NT",
+            "AIX"
+          ],
+          "answer": 0,
+          "explanation": "MS-DOS shipped with early IBM PCs."
+        },
+        {
+          "id": "QC_OS017",
+          "question": "Which feature isolates apps for security?",
+          "options": [
+            "User sandboxing",
+            "Disk defragmentation",
+            "Screensaver",
+            "Wallpaper"
+          ],
+          "answer": 0,
+          "explanation": "Sandboxing restricts app permissions/resources."
+        },
+        {
+          "id": "QC_OS018",
+          "question": "File systems organize data on:",
+          "options": [
+            "Storage devices",
+            "CPU cache",
+            "GPU VRAM",
+            "Network packets"
+          ],
+          "answer": 0,
+          "explanation": "Examples include NTFS, ext4, APFS."
+        },
+        {
+          "id": "QC_OS019",
+          "question": "Which command shows running processes in many OSes?",
+          "options": [
+            "top/Task Manager",
+            "ping",
+            "cd",
+            "mv"
+          ],
+          "answer": 0,
+          "explanation": "Process viewers display CPU/memory usage."
+        },
+        {
+          "id": "QC_OS020",
+          "question": "Which account type has full system privileges?",
+          "options": [
+            "Administrator/root",
+            "Guest",
+            "Standard user",
+            "Kid mode"
+          ],
+          "answer": 0,
+          "explanation": "Admin/root has elevated permissions."
+        }
+      ]
+    },
+    {
+      "name": "Software",
+      "questions": [
+        {
+          "id": "QC_SW001",
+          "question": "System software includes:",
+          "options": [
+            "Operating systems and drivers",
+            "Word processors",
+            "Games",
+            "Browsers only"
+          ],
+          "answer": 0,
+          "explanation": "System software manages hardware and provides a platform for apps."
+        },
+        {
+          "id": "QC_SW002",
+          "question": "Application software is used to:",
+          "options": [
+            "Perform user tasks",
+            "Boot hardware",
+            "Manage RAM",
+            "Control CPU voltage"
+          ],
+          "answer": 0,
+          "explanation": "Examples: word processors, spreadsheets, browsers."
+        },
+        {
+          "id": "QC_SW003",
+          "question": "Which is an example of an IDE?",
+          "options": [
+            "Visual Studio Code",
+            "NTFS",
+            "Ethernet",
+            "BIOS"
+          ],
+          "answer": 0,
+          "explanation": "VS Code is a popular development environment."
+        },
+        {
+          "id": "QC_SW004",
+          "question": "What is open-source software?",
+          "options": [
+            "Source code available to modify",
+            "Always free but closed",
+            "Trial-only",
+            "Hardware-dependent"
+          ],
+          "answer": 0,
+          "explanation": "Open-source licenses allow inspection and modification."
+        },
+        {
+          "id": "QC_SW005",
+          "question": "A patch is:",
+          "options": [
+            "A software update fixing issues",
+            "A hardware attachment",
+            "A backup file",
+            "A license key"
+          ],
+          "answer": 0,
+          "explanation": "Patches fix bugs, improve security, or add features."
+        },
+        {
+          "id": "QC_SW006",
+          "question": "A driver is:",
+          "options": [
+            "Software that lets OS communicate with hardware",
+            "A type of CPU",
+            "A file compressor",
+            "A database"
+          ],
+          "answer": 0,
+          "explanation": "Drivers enable hardware device functionality."
+        },
+        {
+          "id": "QC_SW007",
+          "question": "Which file format is typically a document?",
+          "options": [
+            ".docx",
+            ".exe",
+            ".dll",
+            ".sys"
+          ],
+          "answer": 0,
+          "explanation": ".docx is a word processing document format."
+        },
+        {
+          "id": "QC_SW008",
+          "question": "Which is an example of graphic editing software?",
+          "options": [
+            "GIMP",
+            "MySQL",
+            "PowerPoint",
+            "Bash"
+          ],
+          "answer": 0,
+          "explanation": "GIMP edits images and graphics."
+        },
+        {
+          "id": "QC_SW009",
+          "question": "Freeware means:",
+          "options": [
+            "No cost to use",
+            "Free to modify and redistribute",
+            "Paid with subscription",
+            "Hardware included"
+          ],
+          "answer": 0,
+          "explanation": "Freeware is free of charge; licenses vary for modification."
+        },
+        {
+          "id": "QC_SW010",
+          "question": "Shareware is:",
+          "options": [
+            "Try before you buy software",
+            "Free and open forever",
+            "Hardware driver pack",
+            "Educational only"
+          ],
+          "answer": 0,
+          "explanation": "Shareware is limited or trial software for evaluation."
+        },
+        {
+          "id": "QC_SW011",
+          "question": "A compiler:",
+          "options": [
+            "Translates source code to machine code",
+            "Executes code line by line",
+            "Edits images",
+            "Stores data"
+          ],
+          "answer": 0,
+          "explanation": "Compilers produce executable binaries."
+        },
+        {
+          "id": "QC_SW012",
+          "question": "An interpreter:",
+          "options": [
+            "Runs code line by line",
+            "Converts code to binary ahead of time",
+            "Formats hard disks",
+            "Encrypts backups"
+          ],
+          "answer": 0,
+          "explanation": "Interpreters execute instructions at runtime."
+        },
+        {
+          "id": "QC_SW013",
+          "question": "Version control systems help:",
+          "options": [
+            "Track changes to code",
+            "Increase CPU speed",
+            "Render graphics",
+            "Defragment disks"
+          ],
+          "answer": 0,
+          "explanation": "Tools like Git manage code history and collaboration."
+        },
+        {
+          "id": "QC_SW014",
+          "question": "Which is productivity software?",
+          "options": [
+            "Spreadsheet",
+            "Device driver",
+            "Kernel",
+            "Firmware"
+          ],
+          "answer": 0,
+          "explanation": "Spreadsheets help organize and analyze data."
+        },
+        {
+          "id": "QC_SW015",
+          "question": "Portable apps differ from installers because they:",
+          "options": [
+            "Run without full installation",
+            "Require admin rights",
+            "Only run on servers",
+            "Are hardware only"
+          ],
+          "answer": 0,
+          "explanation": "Portable apps keep files in a folder and don't modify the system much."
+        },
+        {
+          "id": "QC_SW016",
+          "question": "EULA stands for:",
+          "options": [
+            "End-User License Agreement",
+            "Enhanced Utility License Access",
+            "Extended Use Legal Act",
+            "End User Local Attachment"
+          ],
+          "answer": 0,
+          "explanation": "EULA is the contract between software publisher and user."
+        },
+        {
+          "id": "QC_SW017",
+          "question": "Compression software is used to:",
+          "options": [
+            "Reduce file size",
+            "Increase CPU speed",
+            "Backup RAM",
+            "Render 3D graphics"
+          ],
+          "answer": 0,
+          "explanation": "ZIP/RAR tools compress files to save space/bandwidth."
+        },
+        {
+          "id": "QC_SW018",
+          "question": "Virtualization software (e.g., VirtualBox) lets you:",
+          "options": [
+            "Run multiple OSes on one machine",
+            "Print wirelessly",
+            "Overclock GPU",
+            "Design slides"
+          ],
+          "answer": 0,
+          "explanation": "Virtual machines emulate hardware for guest OSes."
+        },
+        {
+          "id": "QC_SW019",
+          "question": "Which is an example of collaboration software?",
+          "options": [
+            "Slack",
+            "Device Manager",
+            "Disk Cleanup",
+            "DirectX"
+          ],
+          "answer": 0,
+          "explanation": "Slack supports team communication."
+        },
+        {
+          "id": "QC_SW020",
+          "question": "Bug tracking systems are used to:",
+          "options": [
+            "Record and manage software defects",
+            "Monitor CPU temperature",
+            "Translate languages",
+            "Encrypt drives"
+          ],
+          "answer": 0,
+          "explanation": "Tools like Jira/Bugzilla manage issues and workflows."
+        }
+      ]
+    },
+    {
+      "name": "Programming Intro",
+      "questions": [
+        {
+          "id": "QC_PI001",
+          "question": "A variable is:",
+          "options": [
+            "A named storage for data",
+            "A hardware chip",
+            "A network device",
+            "An OS process only"
+          ],
+          "answer": 0,
+          "explanation": "Variables hold values that can change during execution."
+        },
+        {
+          "id": "QC_PI002",
+          "question": "Which is a loop structure?",
+          "options": [
+            "for",
+            "if",
+            "switch",
+            "case"
+          ],
+          "answer": 0,
+          "explanation": "Loops repeat code; for/while are common."
+        },
+        {
+          "id": "QC_PI003",
+          "question": "Which symbol denotes a single-line comment in many languages (C/Java/JS)?",
+          "options": [
+            "//",
+            "#!",
+            "<!-- -->",
+            "/* */"
+          ],
+          "answer": 0,
+          "explanation": "// starts a single-line comment in C-style languages."
+        },
+        {
+          "id": "QC_PI004",
+          "question": "An algorithm is:",
+          "options": [
+            "A step-by-step procedure to solve a problem",
+            "A programming language",
+            "A code editor",
+            "A storage device"
+          ],
+          "answer": 0,
+          "explanation": "Algorithms specify clear steps to reach a result."
+        },
+        {
+          "id": "QC_PI005",
+          "question": "A function/procedure is used to:",
+          "options": [
+            "Group reusable code",
+            "Store files",
+            "Render UI only",
+            "Compile programs"
+          ],
+          "answer": 0,
+          "explanation": "Functions encapsulate behavior with inputs/outputs."
+        },
+        {
+          "id": "QC_PI006",
+          "question": "Which is a data type?",
+          "options": [
+            "Integer",
+            "Router",
+            "Compiler",
+            "SSD"
+          ],
+          "answer": 0,
+          "explanation": "Data types define kinds of values like int, float, string."
+        },
+        {
+          "id": "QC_PI007",
+          "question": "Conditional execution uses:",
+          "options": [
+            "if/else statements",
+            "GPU cores",
+            "Disk partitions",
+            "Network sockets"
+          ],
+          "answer": 0,
+          "explanation": "if/else chooses code paths based on conditions."
+        },
+        {
+          "id": "QC_PI008",
+          "question": "Compilation is the process of:",
+          "options": [
+            "Translating source code to machine code",
+            "Editing images",
+            "Compressing files",
+            "Sending emails"
+          ],
+          "answer": 0,
+          "explanation": "Compilers transform code into executables."
+        },
+        {
+          "id": "QC_PI009",
+          "question": "Which language is commonly interpreted?",
+          "options": [
+            "Python",
+            "C",
+            "C++",
+            "Rust"
+          ],
+          "answer": 0,
+          "explanation": "Python typically runs via an interpreter (CPython)."
+        },
+        {
+          "id": "QC_PI010",
+          "question": "An array is:",
+          "options": [
+            "A collection of elements of the same type",
+            "A network diagram",
+            "A security patch",
+            "A graphics filter"
+          ],
+          "answer": 0,
+          "explanation": "Arrays store ordered elements accessible by index."
+        },
+        {
+          "id": "QC_PI011",
+          "question": "OOP stands for:",
+          "options": [
+            "Object-Oriented Programming",
+            "Open Operations Protocol",
+            "Object Option Patch",
+            "Official Operating Program"
+          ],
+          "answer": 0,
+          "explanation": "OOP organizes code around objects and classes."
+        },
+        {
+          "id": "QC_PI012",
+          "question": "Which is NOT a logical operator?",
+          "options": [
+            "AND",
+            "OR",
+            "NOT",
+            "ADD"
+          ],
+          "answer": 3,
+          "explanation": "ADD is arithmetic; AND/OR/NOT are logical."
+        },
+        {
+          "id": "QC_PI013",
+          "question": "Debugging means:",
+          "options": [
+            "Finding and fixing code errors",
+            "Encrypting data",
+            "Designing UI",
+            "Backing up files"
+          ],
+          "answer": 0,
+          "explanation": "Debugging locates and resolves defects."
+        },
+        {
+          "id": "QC_PI014",
+          "question": "Runtime error occurs:",
+          "options": [
+            "While program is executing",
+            "Before code is written",
+            "During installation",
+            "Only at compile time"
+          ],
+          "answer": 0,
+          "explanation": "Runtime errors happen during execution."
+        },
+        {
+          "id": "QC_PI015",
+          "question": "Git is primarily used for:",
+          "options": [
+            "Version control",
+            "3D rendering",
+            "Network routing",
+            "Database indexing"
+          ],
+          "answer": 0,
+          "explanation": "Git tracks changes and supports collaboration."
+        },
+        {
+          "id": "QC_PI016",
+          "question": "Pseudocode is:",
+          "options": [
+            "Human-readable algorithm description",
+            "Executable code",
+            "Database query",
+            "Machine code"
+          ],
+          "answer": 0,
+          "explanation": "Pseudocode outlines logic without strict syntax."
+        },
+        {
+          "id": "QC_PI017",
+          "question": "Which is a compiled language?",
+          "options": [
+            "C++",
+            "Python",
+            "JavaScript (in browsers)",
+            "Ruby"
+          ],
+          "answer": 0,
+          "explanation": "C++ is typically compiled to native code."
+        },
+        {
+          "id": "QC_PI018",
+          "question": "Which data structure uses key–value pairs?",
+          "options": [
+            "Dictionary/Map",
+            "Array",
+            "Stack",
+            "Queue"
+          ],
+          "answer": 0,
+          "explanation": "Maps associate keys with values for fast lookup."
+        },
+        {
+          "id": "QC_PI019",
+          "question": "Big-O notation describes:",
+          "options": [
+            "Algorithm time/space growth",
+            "CPU temperature",
+            "Screen resolution",
+            "Battery life"
+          ],
+          "answer": 0,
+          "explanation": "Big-O characterizes performance as input size grows."
+        },
+        {
+          "id": "QC_PI020",
+          "question": "Which statement repeats until a condition becomes false?",
+          "options": [
+            "while loop",
+            "if statement",
+            "return statement",
+            "import statement"
+          ],
+          "answer": 0,
+          "explanation": "while executes as long as its condition is true."
+        }
+      ]
+    },
+    {
+      "name": "Networking Basics",
+      "questions": [
+        {
+          "id": "QC_NB001",
+          "question": "What does LAN stand for?",
+          "options": [
+            "Local Area Network",
+            "Large Area Network",
+            "Logical Access Network",
+            "Low Access Node"
+          ],
+          "answer": 0,
+          "explanation": "LAN connects devices in a limited area."
+        },
+        {
+          "id": "QC_NB002",
+          "question": "Which device is primarily used to connect multiple devices within a LAN?",
+          "options": [
+            "Router",
+            "Switch",
+            "Firewall",
+            "Modem"
+          ],
+          "answer": 1,
+          "explanation": "Switches forward frames based on MAC addresses."
+        },
+        {
+          "id": "QC_NB003",
+          "question": "Main function of a router?",
+          "options": [
+            "Connect devices in a LAN",
+            "Connect different networks",
+            "Boost Wi‑Fi signals",
+            "Provide power"
+          ],
+          "answer": 1,
+          "explanation": "Routers forward packets between networks."
+        },
+        {
+          "id": "QC_NB004",
+          "question": "IP stands for:",
+          "options": [
+            "Internet Provider",
+            "Internet Protocol",
+            "Internal Process",
+            "Information Path"
+          ],
+          "answer": 1,
+          "explanation": "Internet Protocol defines addressing and routing."
+        },
+        {
+          "id": "QC_NB005",
+          "question": "Which uses 128‑bit addressing?",
+          "options": [
+            "IPv4",
+            "IPv6",
+            "IPX",
+            "ARP"
+          ],
+          "answer": 1,
+          "explanation": "IPv6 has a vastly larger address space."
+        },
+        {
+          "id": "QC_NB006",
+          "question": "Default port for HTTP?",
+          "options": [
+            "21",
+            "25",
+            "80",
+            "443"
+          ],
+          "answer": 2,
+          "explanation": "HTTP commonly uses TCP port 80."
+        },
+        {
+          "id": "QC_NB007",
+          "question": "DNS does what?",
+          "options": [
+            "Maps IP to MAC",
+            "Maps domain names to IPs",
+            "Routes packets",
+            "Encrypts traffic"
+          ],
+          "answer": 1,
+          "explanation": "DNS resolves names to addresses."
+        },
+        {
+          "id": "QC_NB008",
+          "question": "Which is a private IP range?",
+          "options": [
+            "192.168.x.x",
+            "172.16–31.x.x",
+            "10.x.x.x",
+            "All of the above"
+          ],
+          "answer": 3,
+          "explanation": "All listed ranges are private."
+        },
+        {
+          "id": "QC_NB009",
+          "question": "Protocol for file transfer?",
+          "options": [
+            "HTTP",
+            "FTP",
+            "SMTP",
+            "SNMP"
+          ],
+          "answer": 1,
+          "explanation": "FTP transfers files over a network."
+        },
+        {
+          "id": "QC_NB010",
+          "question": "Topology with central hub/switch:",
+          "options": [
+            "Ring",
+            "Mesh",
+            "Star",
+            "Bus"
+          ],
+          "answer": 2,
+          "explanation": "Star connects devices to a central point."
+        },
+        {
+          "id": "QC_NB011",
+          "question": "OSI layer responsible for routing:",
+          "options": [
+            "Data Link",
+            "Network",
+            "Transport",
+            "Application"
+          ],
+          "answer": 1,
+          "explanation": "Layer 3 handles logical addressing and routing."
+        },
+        {
+          "id": "QC_NB012",
+          "question": "MAC address uniquely identifies:",
+          "options": [
+            "Protocol",
+            "NIC hardware interface",
+            "IP address",
+            "Server"
+          ],
+          "answer": 1,
+          "explanation": "MAC addresses are burned into NICs."
+        },
+        {
+          "id": "QC_NB013",
+          "question": "Device to connect LAN to Internet:",
+          "options": [
+            "Switch",
+            "Access Point",
+            "Router",
+            "Repeater"
+          ],
+          "answer": 2,
+          "explanation": "Routers connect different networks."
+        },
+        {
+          "id": "QC_NB014",
+          "question": "Which is a wireless standard?",
+          "options": [
+            "802.11",
+            "802.3",
+            "802.15.4",
+            "All of the above"
+          ],
+          "answer": 3,
+          "explanation": "All are IEEE networking standards."
+        },
+        {
+          "id": "QC_NB015",
+          "question": "Max speed of Fast Ethernet:",
+          "options": [
+            "10 Mbps",
+            "100 Mbps",
+            "1 Gbps",
+            "10 Gbps"
+          ],
+          "answer": 1,
+          "explanation": "Fast Ethernet is 100 Mbps."
+        },
+        {
+          "id": "QC_NB016",
+          "question": "Secure browsing protocol:",
+          "options": [
+            "HTTP",
+            "HTTPS",
+            "FTP",
+            "Telnet"
+          ],
+          "answer": 1,
+          "explanation": "HTTPS uses TLS encryption."
+        },
+        {
+          "id": "QC_NB017",
+          "question": "Purpose of a firewall:",
+          "options": [
+            "Speed up Internet",
+            "Filter network traffic",
+            "Assign IPs",
+            "Store data"
+          ],
+          "answer": 1,
+          "explanation": "Firewalls enforce traffic rules."
+        },
+        {
+          "id": "QC_NB018",
+          "question": "Command to test connectivity:",
+          "options": [
+            "ping",
+            "ipconfig",
+            "traceroute",
+            "netstat"
+          ],
+          "answer": 0,
+          "explanation": "ping sends ICMP echo requests."
+        },
+        {
+          "id": "QC_NB019",
+          "question": "DHCP stands for:",
+          "options": [
+            "Dynamic Host Control Protocol",
+            "Dynamic Host Configuration Protocol",
+            "Data Host Communication Protocol",
+            "Direct Host Control Protocol"
+          ],
+          "answer": 1,
+          "explanation": "DHCP auto-assigns IP addresses."
+        },
+        {
+          "id": "QC_NB020",
+          "question": "Which device works at Data Link layer?",
+          "options": [
+            "Switch",
+            "Router",
+            "Firewall",
+            "Gateway"
+          ],
+          "answer": 0,
+          "explanation": "Switches forward frames based on MAC."
+        }
+      ]
+    },
+    {
+      "name": "Internet Basics",
+      "questions": [
+        {
+          "id": "QC_IB001",
+          "question": "WWW stands for:",
+          "options": [
+            "World Wide Web",
+            "Wide World Web",
+            "Web World Wide",
+            "World Web Wide"
+          ],
+          "answer": 0,
+          "explanation": "The Web is a system of interlinked documents."
+        },
+        {
+          "id": "QC_IB002",
+          "question": "A web browser is used to:",
+          "options": [
+            "Access websites",
+            "Create websites",
+            "Host websites",
+            "Encrypt emails"
+          ],
+          "answer": 0,
+          "explanation": "Browsers retrieve and display web pages."
+        },
+        {
+          "id": "QC_IB003",
+          "question": "Which is a search engine?",
+          "options": [
+            "Chrome",
+            "Google",
+            "Firefox",
+            "Edge"
+          ],
+          "answer": 1,
+          "explanation": "Google is a search engine; others are browsers."
+        },
+        {
+          "id": "QC_IB004",
+          "question": "URL stands for:",
+          "options": [
+            "Uniform Resource Locator",
+            "Universal Resource Locator",
+            "Unique Reference Link",
+            "Unified Routing Locator"
+          ],
+          "answer": 0,
+          "explanation": "A URL specifies where a resource is located."
+        },
+        {
+          "id": "QC_IB005",
+          "question": "Secure web protocol:",
+          "options": [
+            "HTTP",
+            "FTP",
+            "HTTPS",
+            "SMTP"
+          ],
+          "answer": 2,
+          "explanation": "HTTPS uses TLS to encrypt traffic."
+        },
+        {
+          "id": "QC_IB006",
+          "question": "ISP stands for:",
+          "options": [
+            "Internet Service Provider",
+            "Internal Server Protocol",
+            "Internet Secure Platform",
+            "Intranet Service Provider"
+          ],
+          "answer": 0,
+          "explanation": "ISPs provide Internet access."
+        },
+        {
+          "id": "QC_IB007",
+          "question": "Email sending protocol:",
+          "options": [
+            "HTTP",
+            "SMTP",
+            "DNS",
+            "HTML"
+          ],
+          "answer": 1,
+          "explanation": "SMTP sends email between servers."
+        },
+        {
+          "id": "QC_IB008",
+          "question": "DNS function:",
+          "options": [
+            "Translate domain names to IP addresses",
+            "Encrypt data",
+            "Provide email",
+            "Block malware"
+          ],
+          "answer": 0,
+          "explanation": "DNS resolves names to IPs."
+        },
+        {
+          "id": "QC_IB009",
+          "question": "Example of a domain name:",
+          "options": [
+            "192.168.1.1",
+            "https://",
+            "google.com",
+            "http://"
+          ],
+          "answer": 2,
+          "explanation": "google.com is a domain."
+        },
+        {
+          "id": "QC_IB010",
+          "question": "IP in IP address stands for:",
+          "options": [
+            "Internet Protocol",
+            "Internal Process",
+            "Information Pathway",
+            "Interface Program"
+          ],
+          "answer": 0,
+          "explanation": "Internet Protocol governs addressing/routing."
+        },
+        {
+          "id": "QC_IB011",
+          "question": "Main purpose of cookies:",
+          "options": [
+            "Save user preferences/session info",
+            "Speed up CPU",
+            "Block ads",
+            "Prevent all malware"
+          ],
+          "answer": 0,
+          "explanation": "Cookies store small pieces of site data."
+        },
+        {
+          "id": "QC_IB012",
+          "question": "Cloud-based email service example:",
+          "options": [
+            "Gmail",
+            "Photoshop",
+            "Notepad",
+            "WinRAR"
+          ],
+          "answer": 0,
+          "explanation": "Gmail is a web-based email service."
+        },
+        {
+          "id": "QC_IB013",
+          "question": "Streaming means:",
+          "options": [
+            "Playing media in real time",
+            "Always downloading fully first",
+            "Uploading files",
+            "Printing pages"
+          ],
+          "answer": 0,
+          "explanation": "Streaming plays while data arrives."
+        },
+        {
+          "id": "QC_IB014",
+          "question": "Main function of a search engine:",
+          "options": [
+            "Find information on the Internet",
+            "Backup files",
+            "Build websites",
+            "Secure networks"
+          ],
+          "answer": 0,
+          "explanation": "Search engines index and rank pages."
+        },
+        {
+          "id": "QC_IB015",
+          "question": "Which is a top-level domain (TLD)?",
+          "options": [
+            ".com",
+            "google",
+            "www",
+            "http"
+          ],
+          "answer": 0,
+          "explanation": ".com is a TLD."
+        },
+        {
+          "id": "QC_IB016",
+          "question": "Phishing is:",
+          "options": [
+            "Fraud to obtain sensitive info",
+            "A spam filter",
+            "A search engine",
+            "A video codec"
+          ],
+          "answer": 0,
+          "explanation": "Phishing tricks users into sharing data."
+        },
+        {
+          "id": "QC_IB017",
+          "question": "Bandwidth refers to:",
+          "options": [
+            "Amount of data per second",
+            "Cable width",
+            "Number of users",
+            "Signal length"
+          ],
+          "answer": 0,
+          "explanation": "Higher bandwidth allows more data throughput."
+        },
+        {
+          "id": "QC_IB018",
+          "question": "A modem is used to:",
+          "options": [
+            "Connect to the Internet",
+            "Store files",
+            "Host websites",
+            "Create domains"
+          ],
+          "answer": 0,
+          "explanation": "Modems convert signals for ISP connection."
+        },
+        {
+          "id": "QC_IB019",
+          "question": "An IP address is used to:",
+          "options": [
+            "Identify devices on a network",
+            "Speed up computers",
+            "Encrypt traffic",
+            "Store passwords"
+          ],
+          "answer": 0,
+          "explanation": "IP addresses uniquely identify devices."
+        },
+        {
+          "id": "QC_IB020",
+          "question": "Which is an instant messaging service?",
+          "options": [
+            "WhatsApp",
+            "WordPress",
+            "Google Docs",
+            "Dropbox"
+          ],
+          "answer": 0,
+          "explanation": "WhatsApp supports real‑time messaging."
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "questions": [
+        {
+          "id": "QC_CS001",
+          "question": "What does 'phishing' usually involve?",
+          "options": [
+            "Stealing hardware",
+            "Tricking users to reveal info",
+            "Overloading a server",
+            "Encrypting files for ransom"
+          ],
+          "answer": 1,
+          "explanation": "Phishing uses deception to obtain sensitive data."
+        },
+        {
+          "id": "QC_CS002",
+          "question": "Which of the following is malware?",
+          "options": [
+            "Firewall",
+            "Antivirus",
+            "Trojan horse",
+            "Encryption key"
+          ],
+          "answer": 2,
+          "explanation": "Trojans masquerade as legitimate software."
+        },
+        {
+          "id": "QC_CS003",
+          "question": "A firewall primarily:",
+          "options": [
+            "Encrypts files",
+            "Blocks unauthorized network traffic",
+            "Detects phishing",
+            "Manages passwords"
+          ],
+          "answer": 1,
+          "explanation": "Firewalls filter traffic per security rules."
+        },
+        {
+          "id": "QC_CS004",
+          "question": "DDoS stands for:",
+          "options": [
+            "Distributed Denial of Service",
+            "Data Denial of Security",
+            "Domain Detection of System",
+            "Distributed Data of Servers"
+          ],
+          "answer": 0,
+          "explanation": "DDoS overwhelms a target with traffic."
+        },
+        {
+          "id": "QC_CS005",
+          "question": "A strong password is usually:",
+          "options": [
+            "password123",
+            "Short with numbers only",
+            "Reused everywhere",
+            "Long and complex"
+          ],
+          "answer": 3,
+          "explanation": "Length and complexity improve resistance to guessing."
+        },
+        {
+          "id": "QC_CS006",
+          "question": "Purpose of MFA/2FA:",
+          "options": [
+            "Speed up logins",
+            "Add extra verification factors",
+            "Replace passwords fully",
+            "Disable security"
+          ],
+          "answer": 1,
+          "explanation": "MFA combines something you know/have/are."
+        },
+        {
+          "id": "QC_CS007",
+          "question": "Safer email practice:",
+          "options": [
+            "Click unknown links",
+            "Open any attachment",
+            "Verify sender details",
+            "Reuse passwords"
+          ],
+          "answer": 2,
+          "explanation": "Check sender and link legitimacy."
+        },
+        {
+          "id": "QC_CS008",
+          "question": "VPN stands for:",
+          "options": [
+            "Virtual Private Network",
+            "Verified Protection Network",
+            "Virtual Public Node",
+            "Variable Privacy Number"
+          ],
+          "answer": 0,
+          "explanation": "VPNs encrypt traffic and mask IPs."
+        },
+        {
+          "id": "QC_CS009",
+          "question": "Example of social engineering:",
+          "options": [
+            "SQL injection",
+            "Phishing email",
+            "Installing updates",
+            "Using HTTPS"
+          ],
+          "answer": 1,
+          "explanation": "Phishing manipulates people, not systems."
+        },
+        {
+          "id": "QC_CS010",
+          "question": "Ransomware:",
+          "options": [
+            "Encrypts data and demands payment",
+            "Speeds up systems",
+            "Is a backup tool",
+            "A type of firewall"
+          ],
+          "answer": 0,
+          "explanation": "Ransomware locks files for ransom."
+        },
+        {
+          "id": "QC_CS011",
+          "question": "Best control against brute-force:",
+          "options": [
+            "Strong password policy + lockout",
+            "Click all emails",
+            "Install more RAM",
+            "Disable antivirus"
+          ],
+          "answer": 0,
+          "explanation": "Complexity and lockouts slow attackers."
+        },
+        {
+          "id": "QC_CS012",
+          "question": "Secure web protocol:",
+          "options": [
+            "HTTP",
+            "FTP",
+            "HTTPS",
+            "Telnet"
+          ],
+          "answer": 2,
+          "explanation": "HTTPS uses TLS encryption."
+        },
+        {
+          "id": "QC_CS013",
+          "question": "Encryption:",
+          "options": [
+            "Converts data into coded form",
+            "Deletes malware",
+            "Speeds downloads",
+            "Formats disks"
+          ],
+          "answer": 0,
+          "explanation": "Only those with keys can read ciphertext."
+        },
+        {
+          "id": "QC_CS014",
+          "question": "Indicator of a secure website:",
+          "options": [
+            "http://",
+            "https://",
+            "Slow loading",
+            "Many pop‑ups"
+          ],
+          "answer": 1,
+          "explanation": "The 's' indicates TLS encryption."
+        },
+        {
+          "id": "QC_CS015",
+          "question": "Spyware is:",
+          "options": [
+            "Software that secretly monitors users",
+            "A secure plug‑in",
+            "A backup utility",
+            "Hardware firewall"
+          ],
+          "answer": 0,
+          "explanation": "Spyware collects info without consent."
+        },
+        {
+          "id": "QC_CS016",
+          "question": "Antivirus software:",
+          "options": [
+            "Detects/removes malicious programs",
+            "Installs drivers",
+            "Improves Wi‑Fi",
+            "Creates passwords"
+          ],
+          "answer": 0,
+          "explanation": "Antivirus scans for known/behavioral threats."
+        },
+        {
+          "id": "QC_CS017",
+          "question": "Penetration testing aims to:",
+          "options": [
+            "Slow networks",
+            "Find system vulnerabilities",
+            "Erase logs",
+            "Create device drivers"
+          ],
+          "answer": 1,
+          "explanation": "Pentests simulate attacks to find weaknesses."
+        },
+        {
+          "id": "QC_CS018",
+          "question": "Malware disguised as legit software is a:",
+          "options": [
+            "Worm",
+            "Trojan",
+            "Virus",
+            "Keylogger"
+          ],
+          "answer": 1,
+          "explanation": "Trojans rely on deception for installation."
+        },
+        {
+          "id": "QC_CS019",
+          "question": "A digital certificate is used to:",
+          "options": [
+            "Authenticate websites and enable encryption",
+            "Store passwords",
+            "Speed up CPU",
+            "Compress files"
+          ],
+          "answer": 0,
+          "explanation": "Certificates verify identity and support TLS."
+        },
+        {
+          "id": "QC_CS020",
+          "question": "Safest way to use public Wi‑Fi:",
+          "options": [
+            "Bank directly",
+            "Use a VPN",
+            "Disable firewalls",
+            "Turn off updates"
+          ],
+          "answer": 1,
+          "explanation": "A VPN encrypts traffic on untrusted networks."
+        }
+      ]
+    },
+    {
+      "name": "Databases",
+      "questions": [
+        {
+          "id": "QC_DB001",
+          "question": "What is a database?",
+          "options": [
+            "Programs collection",
+            "Organized data for easy access",
+            "Hardware device",
+            "Web browser"
+          ],
+          "answer": 1,
+          "explanation": "Databases store and manage structured data."
+        },
+        {
+          "id": "QC_DB002",
+          "question": "Language primarily used with relational databases:",
+          "options": [
+            "HTML",
+            "SQL",
+            "Python",
+            "JavaScript"
+          ],
+          "answer": 1,
+          "explanation": "SQL queries and manipulates relational data."
+        },
+        {
+          "id": "QC_DB003",
+          "question": "RDBMS stands for:",
+          "options": [
+            "Relational Database Management System",
+            "Random Database Management System",
+            "Reliable Data Model Service",
+            "Rapid Database Model"
+          ],
+          "answer": 0,
+          "explanation": "RDBMS stores data in related tables."
+        },
+        {
+          "id": "QC_DB004",
+          "question": "Popular relational database:",
+          "options": [
+            "MySQL",
+            "MongoDB",
+            "Redis",
+            "Cassandra"
+          ],
+          "answer": 0,
+          "explanation": "MongoDB/Cassandra are NoSQL; MySQL is relational."
+        },
+        {
+          "id": "QC_DB005",
+          "question": "Retrieve rows from a table:",
+          "options": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ],
+          "answer": 0,
+          "explanation": "SELECT returns data from tables."
+        },
+        {
+          "id": "QC_DB006",
+          "question": "Primary key:",
+          "options": [
+            "Uniquely identifies each record",
+            "Stores passwords",
+            "Encrypts data",
+            "Duplicate column"
+          ],
+          "answer": 0,
+          "explanation": "Primary keys are unique and not NULL."
+        },
+        {
+          "id": "QC_DB007",
+          "question": "Foreign key:",
+          "options": [
+            "Encryption key",
+            "Field that references another table’s primary key",
+            "Backup key",
+            "Duplicate key"
+          ],
+          "answer": 1,
+          "explanation": "Foreign keys enforce relationships."
+        },
+        {
+          "id": "QC_DB008",
+          "question": "Filter rows in SQL with:",
+          "options": [
+            "WHERE",
+            "ORDER BY",
+            "GROUP BY",
+            "FROM"
+          ],
+          "answer": 0,
+          "explanation": "WHERE restricts rows to those meeting conditions."
+        },
+        {
+          "id": "QC_DB009",
+          "question": "MongoDB is a:",
+          "options": [
+            "Relational DB",
+            "NoSQL document DB",
+            "Hierarchical DB",
+            "Network DB"
+          ],
+          "answer": 1,
+          "explanation": "MongoDB stores JSON‑like documents."
+        },
+        {
+          "id": "QC_DB010",
+          "question": "Remove all rows quickly:",
+          "options": [
+            "DELETE",
+            "DROP",
+            "TRUNCATE",
+            "REMOVE"
+          ],
+          "answer": 2,
+          "explanation": "TRUNCATE clears a table; DROP removes the table."
+        },
+        {
+          "id": "QC_DB011",
+          "question": "Add new records:",
+          "options": [
+            "INSERT",
+            "UPDATE",
+            "SELECT",
+            "DELETE"
+          ],
+          "answer": 0,
+          "explanation": "INSERT INTO adds rows."
+        },
+        {
+          "id": "QC_DB012",
+          "question": "Sort query results:",
+          "options": [
+            "ORDER BY",
+            "GROUP BY",
+            "HAVING",
+            "WHERE"
+          ],
+          "answer": 0,
+          "explanation": "ORDER BY sorts ascending/descending."
+        },
+        {
+          "id": "QC_DB013",
+          "question": "Normalization aims to:",
+          "options": [
+            "Reduce redundancy",
+            "Increase redundancy",
+            "Encrypt data",
+            "Backup data"
+          ],
+          "answer": 0,
+          "explanation": "Normalization organizes data to minimize duplication."
+        },
+        {
+          "id": "QC_DB014",
+          "question": "Relationship where one record relates to many others:",
+          "options": [
+            "One‑to‑One",
+            "One‑to‑Many",
+            "Many‑to‑Many",
+            "None"
+          ],
+          "answer": 1,
+          "explanation": "A parent row can have many child rows."
+        },
+        {
+          "id": "QC_DB015",
+          "question": "Modify existing records:",
+          "options": [
+            "UPDATE",
+            "SELECT",
+            "INSERT",
+            "DELETE"
+          ],
+          "answer": 0,
+          "explanation": "UPDATE changes stored data."
+        },
+        {
+          "id": "QC_DB016",
+          "question": "Common NoSQL database:",
+          "options": [
+            "PostgreSQL",
+            "MongoDB",
+            "Oracle",
+            "SQL Server"
+          ],
+          "answer": 1,
+          "explanation": "MongoDB is document‑oriented NoSQL."
+        },
+        {
+          "id": "QC_DB017",
+          "question": "Group rows by a column:",
+          "options": [
+            "GROUP BY",
+            "ORDER BY",
+            "WHERE",
+            "HAVING"
+          ],
+          "answer": 0,
+          "explanation": "GROUP BY aggregates rows with shared values."
+        },
+        {
+          "id": "QC_DB018",
+          "question": "Remove a table completely:",
+          "options": [
+            "DROP",
+            "DELETE",
+            "TRUNCATE",
+            "ERASE"
+          ],
+          "answer": 0,
+          "explanation": "DROP TABLE deletes the schema object."
+        },
+        {
+          "id": "QC_DB019",
+          "question": "Key that uniquely identifies a row:",
+          "options": [
+            "Primary key",
+            "Foreign key",
+            "Secondary key",
+            "Index only"
+          ],
+          "answer": 0,
+          "explanation": "Primary keys ensure uniqueness."
+        },
+        {
+          "id": "QC_DB020",
+          "question": "Relational databases store data in:",
+          "options": [
+            "Tables (rows & columns)",
+            "Binary blobs only",
+            "Graphs only",
+            "Documents only"
+          ],
+          "answer": 0,
+          "explanation": "RDBMS use tabular structures."
+        }
+      ]
+    },
+    {
+      "name": "Cloud Computing",
+      "questions": [
+        {
+          "id": "QC_CC001",
+          "question": "Cloud computing is:",
+          "options": [
+            "Local servers only",
+            "Delivering computing over the Internet",
+            "Installing software on one PC",
+            "Building physical data centers"
+          ],
+          "answer": 1,
+          "explanation": "On‑demand services like compute, storage, and databases."
+        },
+        {
+          "id": "QC_CC002",
+          "question": "Example of a cloud provider:",
+          "options": [
+            "Google Cloud",
+            "Windows 10",
+            "Ubuntu Desktop",
+            "Chrome browser"
+          ],
+          "answer": 0,
+          "explanation": "Public cloud platforms provide hosted services."
+        },
+        {
+          "id": "QC_CC003",
+          "question": "Model that offers virtualized hardware:",
+          "options": [
+            "IaaS",
+            "PaaS",
+            "SaaS",
+            "DBaaS"
+          ],
+          "answer": 0,
+          "explanation": "IaaS provides VMs, storage, and networks."
+        },
+        {
+          "id": "QC_CC004",
+          "question": "SaaS stands for:",
+          "options": [
+            "Software as a Service",
+            "Storage as a Service",
+            "Security and Access Service",
+            "Server Application Suite"
+          ],
+          "answer": 0,
+          "explanation": "Apps delivered via web without local install."
+        },
+        {
+          "id": "QC_CC005",
+          "question": "Model to build apps without managing servers:",
+          "options": [
+            "IaaS",
+            "PaaS",
+            "SaaS",
+            "Colocation"
+          ],
+          "answer": 1,
+          "explanation": "PaaS offers runtime, scaling, and tools."
+        },
+        {
+          "id": "QC_CC006",
+          "question": "Key benefit of cloud:",
+          "options": [
+            "High upfront cost",
+            "On‑demand scalability",
+            "Manual maintenance",
+            "Limited access"
+          ],
+          "answer": 1,
+          "explanation": "Scale up/down resources as needed."
+        },
+        {
+          "id": "QC_CC007",
+          "question": "Third‑party hosted and shared environment:",
+          "options": [
+            "Public cloud",
+            "Private cloud",
+            "Hybrid cloud",
+            "Community cloud"
+          ],
+          "answer": 0,
+          "explanation": "Public cloud is owned by providers and shared."
+        },
+        {
+          "id": "QC_CC008",
+          "question": "Hybrid cloud is:",
+          "options": [
+            "Mix of private and public clouds",
+            "Only public cloud",
+            "Only private cloud",
+            "No internet cloud"
+          ],
+          "answer": 0,
+          "explanation": "Combines on‑prem and public resources."
+        },
+        {
+          "id": "QC_CC009",
+          "question": "Service to store files in cloud:",
+          "options": [
+            "Cloud Storage",
+            "IaaS",
+            "PaaS",
+            "On‑prem NAS"
+          ],
+          "answer": 0,
+          "explanation": "Managed object/file storage services."
+        },
+        {
+          "id": "QC_CC010",
+          "question": "Example of SaaS:",
+          "options": [
+            "Google Docs",
+            "Amazon EC2",
+            "Linux kernel",
+            "Docker Engine"
+          ],
+          "answer": 0,
+          "explanation": "Docs is a web‑hosted app."
+        },
+        {
+          "id": "QC_CC011",
+          "question": "Virtualization allows:",
+          "options": [
+            "Multiple VMs on one physical server",
+            "Only one OS per server",
+            "Offline backups only",
+            "Faster printers"
+          ],
+          "answer": 0,
+          "explanation": "Hypervisors partition compute resources."
+        },
+        {
+          "id": "QC_CC012",
+          "question": "Managed database service is:",
+          "options": [
+            "DBaaS",
+            "IaaS",
+            "PaaS",
+            "SaaS"
+          ],
+          "answer": 0,
+          "explanation": "DBaaS provides databases without server admin."
+        },
+        {
+          "id": "QC_CC013",
+          "question": "A cloud security concern:",
+          "options": [
+            "Data breaches",
+            "Unlimited bandwidth",
+            "Free electricity",
+            "Guaranteed zero latency"
+          ],
+          "answer": 0,
+          "explanation": "Security and compliance are key challenges."
+        },
+        {
+          "id": "QC_CC014",
+          "question": "Dedicated to a single organization:",
+          "options": [
+            "Private cloud",
+            "Public cloud",
+            "Hybrid cloud",
+            "Edge network"
+          ],
+          "answer": 0,
+          "explanation": "Private cloud offers greater control."
+        },
+        {
+          "id": "QC_CC015",
+          "question": "Automatic scaling capability:",
+          "options": [
+            "Elasticity",
+            "Backup",
+            "Snapshots",
+            "Defragmentation"
+          ],
+          "answer": 0,
+          "explanation": "Elasticity adjusts resources automatically."
+        },
+        {
+          "id": "QC_CC016",
+          "question": "Formal agreement with provider:",
+          "options": [
+            "SLA",
+            "API",
+            "SDK",
+            "CLI"
+          ],
+          "answer": 0,
+          "explanation": "Service Level Agreement defines targets and remedies."
+        },
+        {
+          "id": "QC_CC017",
+          "question": "Shared by organizations with similar needs:",
+          "options": [
+            "Community cloud",
+            "Public cloud",
+            "Private cloud",
+            "Local cluster"
+          ],
+          "answer": 0,
+          "explanation": "Community clouds serve specific groups."
+        },
+        {
+          "id": "QC_CC018",
+          "question": "NOT a cloud benefit:",
+          "options": [
+            "On‑demand self‑service",
+            "High upfront cost",
+            "Resource pooling",
+            "Scalability"
+          ],
+          "answer": 1,
+          "explanation": "Cloud typically lowers upfront capex."
+        },
+        {
+          "id": "QC_CC019",
+          "question": "Model that provides software apps over Internet:",
+          "options": [
+            "SaaS",
+            "PaaS",
+            "IaaS",
+            "DaaS"
+          ],
+          "answer": 0,
+          "explanation": "SaaS delivers apps via browser/APIs."
+        },
+        {
+          "id": "QC_CC020",
+          "question": "Pay only for what you use is:",
+          "options": [
+            "Pay‑as‑you‑go",
+            "Reserved capacity",
+            "Capex",
+            "Manual billing"
+          ],
+          "answer": 0,
+          "explanation": "Consumption‑based pricing matches usage."
+        }
+      ]
+    },
+    {
+      "name": "AI and ML Basics",
+      "questions": [
+        {
+          "id": "QC_AI001",
+          "question": "AI stands for:",
+          "options": [
+            "Automated Intelligence",
+            "Artificial Intelligence",
+            "Advanced Internet",
+            "Applied Information"
+          ],
+          "answer": 1,
+          "explanation": "AI simulates human intelligence in machines."
+        },
+        {
+          "id": "QC_AI002",
+          "question": "Machine Learning is:",
+          "options": [
+            "Manual programming of tasks",
+            "Systems learning patterns from data",
+            "Hardware optimization",
+            "Cloud storage method"
+          ],
+          "answer": 1,
+          "explanation": "ML learns from data without explicit rules."
+        },
+        {
+          "id": "QC_AI003",
+          "question": "Which uses labeled data?",
+          "options": [
+            "Supervised Learning",
+            "Unsupervised Learning",
+            "Reinforcement Learning",
+            "Deep Learning"
+          ],
+          "answer": 0,
+          "explanation": "Supervised models learn input‑output mappings."
+        },
+        {
+          "id": "QC_AI004",
+          "question": "Unlabeled pattern discovery is:",
+          "options": [
+            "Unsupervised Learning",
+            "Supervised Learning",
+            "Transfer Learning",
+            "Meta Learning"
+          ],
+          "answer": 0,
+          "explanation": "Unsupervised finds structure without labels."
+        },
+        {
+          "id": "QC_AI005",
+          "question": "Reinforcement Learning trains via:",
+          "options": [
+            "Trial and reward signals",
+            "Fixed rules only",
+            "Static labels only",
+            "Random guessing"
+          ],
+          "answer": 0,
+          "explanation": "Agents maximize cumulative reward."
+        },
+        {
+          "id": "QC_AI006",
+          "question": "Daily-life AI example:",
+          "options": [
+            "Spell checker",
+            "Paper filing",
+            "Manual calculator",
+            "Analog clock"
+          ],
+          "answer": 0,
+          "explanation": "Spell checkers use language models."
+        },
+        {
+          "id": "QC_AI007",
+          "question": "Deep learning uses:",
+          "options": [
+            "Multi‑layer neural networks",
+            "Single IF statements",
+            "Only decision trees",
+            "Manual tables"
+          ],
+          "answer": 0,
+          "explanation": "Deep nets learn complex representations."
+        },
+        {
+          "id": "QC_AI008",
+          "question": "Common activation function:",
+          "options": [
+            "ReLU",
+            "SQL",
+            "HTTP",
+            "FTP"
+          ],
+          "answer": 0,
+          "explanation": "ReLU introduces non‑linearity in networks."
+        },
+        {
+          "id": "QC_AI009",
+          "question": "Algorithm for classification:",
+          "options": [
+            "Logistic Regression",
+            "Linear Regression",
+            "K‑Means",
+            "PCA"
+          ],
+          "answer": 0,
+          "explanation": "Logistic regression outputs class probabilities."
+        },
+        {
+          "id": "QC_AI010",
+          "question": "Clustering algorithm:",
+          "options": [
+            "K‑Means",
+            "Naive Bayes",
+            "Linear Regression",
+            "SVM (linear)"
+          ],
+          "answer": 0,
+          "explanation": "K‑Means groups similar data points."
+        },
+        {
+          "id": "QC_AI011",
+          "question": "Overfitting means:",
+          "options": [
+            "Great on training, poor on new data",
+            "Poor on both",
+            "Great on new data only",
+            "No training needed"
+          ],
+          "answer": 0,
+          "explanation": "Model memorizes noise rather than generalizing."
+        },
+        {
+          "id": "QC_AI012",
+          "question": "Regression metric:",
+          "options": [
+            "Mean Squared Error",
+            "Accuracy",
+            "Precision",
+            "Recall"
+          ],
+          "answer": 0,
+          "explanation": "MSE measures average squared error."
+        },
+        {
+          "id": "QC_AI013",
+          "question": "Network type for sequences:",
+          "options": [
+            "RNN",
+            "CNN",
+            "GAN",
+            "DBN"
+          ],
+          "answer": 0,
+          "explanation": "RNNs handle sequential/time‑series data."
+        },
+        {
+          "id": "QC_AI014",
+          "question": "General AI aims to:",
+          "options": [
+            "Human‑level ability across tasks",
+            "One specific task only",
+            "Data encryption",
+            "Hardware tuning"
+          ],
+          "answer": 0,
+          "explanation": "AGI aspires to broad intelligence."
+        },
+        {
+          "id": "QC_AI015",
+          "question": "Training dataset is used to:",
+          "options": [
+            "Fit model parameters",
+            "Evaluate final performance only",
+            "Encrypt features",
+            "Store labels only"
+          ],
+          "answer": 0,
+          "explanation": "Training drives learning of weights."
+        },
+        {
+          "id": "QC_AI016",
+          "question": "Dimensionality reduction technique:",
+          "options": [
+            "PCA",
+            "KNN",
+            "DFS",
+            "CRC"
+          ],
+          "answer": 0,
+          "explanation": "PCA projects data into fewer components."
+        },
+        {
+          "id": "QC_AI017",
+          "question": "Supervised learning example:",
+          "options": [
+            "Spam email classification",
+            "Customer segmentation (clustering)",
+            "Market basket association",
+            "Anomaly detection (unsupervised)"
+          ],
+          "answer": 0,
+          "explanation": "Spam filters train on labeled emails."
+        },
+        {
+          "id": "QC_AI018",
+          "question": "Common recommender approach:",
+          "options": [
+            "Collaborative Filtering",
+            "Bubble sort",
+            "Bellman‑Ford",
+            "RSA"
+          ],
+          "answer": 0,
+          "explanation": "CF uses user‑item interactions."
+        },
+        {
+          "id": "QC_AI019",
+          "question": "Algorithm that learns via rewards:",
+          "options": [
+            "Reinforcement Learning",
+            "Supervised Learning",
+            "Unsupervised Learning",
+            "Batch Learning"
+          ],
+          "answer": 0,
+          "explanation": "Agents interact with an environment to learn."
+        },
+        {
+          "id": "QC_AI020",
+          "question": "Neural networks are inspired by:",
+          "options": [
+            "Human brain",
+            "SQL tables",
+            "CPU pipelines",
+            "File systems"
+          ],
+          "answer": 0,
+          "explanation": "Neurons and connections loosely mimic brain structure."
+        }
+      ]
+    }
+  ]
+}

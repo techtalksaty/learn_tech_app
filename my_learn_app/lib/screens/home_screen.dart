@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../constants/app_constants.dart';
-import '../screens/learn/learn_screen.dart';
-import '../screens/quiz/quiz_screen.dart';
-import '../screens/progress/progress_screen.dart';
 import '../screens/learn/learn_category_screen.dart';
+import '../screens/quiz/quiz_category_screen.dart';
+import '../screens/progress/progress_screen.dart';
 import '../widgets/category_card.dart';
+import '../screens/learn/learn_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,8 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = [
     const HomeContent(),
-    const LearnCategoryScreen(), // Updated to category picker
-    const QuizScreen(),
+    const LearnCategoryScreen(),
+    const QuizCategoryScreen(), // Updated to category picker
     const ProgressScreen(),
   ];
 

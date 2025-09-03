@@ -39,7 +39,7 @@ class AppProvider with ChangeNotifier {
         _currentQuizScore++;
       }
     }
-    print('Fetched quiz for $category: $_currentQuizScore/$_totalQuizQuestions');
+    print('Fetched quiz for $category: $_currentQuizScore/$_totalQuizQuestions, answers: ${_quizAnswers[category]}');
     notifyListeners();
   }
 
@@ -53,7 +53,7 @@ class AppProvider with ChangeNotifier {
         _currentQuizScore++;
       }
     }
-    print('Updated quiz answer for $category, score: $_currentQuizScore/$_totalQuizQuestions');
+    print('Updated quiz answer for $category, score: $_currentQuizScore/$_totalQuizQuestions, answers: ${_quizAnswers[category]}');
     notifyListeners();
   }
 
@@ -99,7 +99,8 @@ class AppProvider with ChangeNotifier {
     await _repository.resetQuizAnswers(category);
     _quizAnswers[category] = {};
     _currentQuizScore = 0;
-    await saveQuizProgress(category); // Update progress to reflect reset
+    await saveQuizProgress(category);
+    print('Reset quiz for $category');
     notifyListeners();
   }
 }

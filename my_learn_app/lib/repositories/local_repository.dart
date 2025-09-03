@@ -33,7 +33,7 @@ class LocalRepository {
 
   Future<void> updateProgress(Progress progress) async {
     await _progressBox.put(progress.category, progress);
-    print('Updated progress for ${progress.category}: ${progress.quizScore}%'); // Debug
+    print('Updated progress for ${progress.category}: ${progress.quizScore}%');
   }
 
   List<String> getCompletedLessonIds(String category) {
@@ -67,6 +67,7 @@ class LocalRepository {
 
   Map<String, int> getQuizAnswers(String category) {
     final quizAnswer = _quizAnswerBox.get(category);
+    print('Retrieved quiz answers for $category: ${quizAnswer?.answeredQuestions}');
     return quizAnswer?.answeredQuestions ?? {};
   }
 

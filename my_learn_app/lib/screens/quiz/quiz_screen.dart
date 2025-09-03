@@ -21,7 +21,15 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   void initState() {
     super.initState();
-    Provider.of<AppProvider>(context, listen: false).fetchQuizQuestions(widget.category);
+    final provider = Provider.of<AppProvider>(context, listen: false);
+    provider.fetchQuizQuestions(widget.category);
+    // Initialize state for the first question
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setState(() {
+        _selectedOption = provider.quizAnswers(widget.category)[provider.quizQuestions[_currentQuestionIndex].id];
+        _isSubmitted = _selectedOption != null;
+      });
+    });
   }
 
   void _submitAnswer(AppProvider provider, QuizQuestion question) {
@@ -38,6 +46,7 @@ class _QuizScreenState extends State<QuizScreen> {
         _currentQuestionIndex++;
         _selectedOption = provider.quizAnswers(widget.category)[provider.quizQuestions[_currentQuestionIndex].id];
         _isSubmitted = _selectedOption != null;
+        print('Navigated to question ${_currentQuestionIndex + 1}, selected: $_selectedOption, submitted: $_isSubmitted');
       });
     } else {
       provider.saveQuizProgress(widget.category);
@@ -64,6 +73,7 @@ class _QuizScreenState extends State<QuizScreen> {
       _selectedOption = null;
       _isSubmitted = false;
     });
+    print('Reset quiz for ${widget.category}');
   }
 
   @override
@@ -116,7 +126,10 @@ class _QuizScreenState extends State<QuizScreen> {
                 groupValue: _selectedOption,
                 onChanged: _isSubmitted
                     ? null
-                    : (value) => setState(() => _selectedOption = value),
+                    : (value) => setState(() {
+                          _selectedOption = value;
+                          print('Selected option $value for question ${question.id}');
+                        }),
               );
             }).toList(),
             if (_isSubmitted) ...[

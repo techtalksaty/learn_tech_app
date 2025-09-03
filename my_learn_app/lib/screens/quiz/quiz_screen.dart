@@ -28,7 +28,7 @@ class _QuizScreenState extends State<QuizScreen> {
     if (_selectedOption == null) return;
     setState(() {
       _isSubmitted = true;
-      provider.updateQuizScore(_selectedOption == question.answer);
+      provider.updateQuizAnswer(widget.category, question.id, _selectedOption!);
     });
   }
 
@@ -36,8 +36,8 @@ class _QuizScreenState extends State<QuizScreen> {
     if (_currentQuestionIndex < provider.quizQuestions.length - 1) {
       setState(() {
         _currentQuestionIndex++;
-        _selectedOption = null;
-        _isSubmitted = false;
+        _selectedOption = provider.quizAnswers(widget.category)[provider.quizQuestions[_currentQuestionIndex].id];
+        _isSubmitted = _selectedOption != null;
       });
     } else {
       provider.saveQuizProgress(widget.category);
@@ -55,6 +55,15 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
       );
     }
+  }
+
+  void _resetQuiz(AppProvider provider) {
+    provider.resetQuiz(widget.category);
+    setState(() {
+      _currentQuestionIndex = 0;
+      _selectedOption = null;
+      _isSubmitted = false;
+    });
   }
 
   @override
@@ -75,6 +84,13 @@ class _QuizScreenState extends State<QuizScreen> {
       appBar: AppBar(
         title: Text('Quiz: ${widget.category}'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: () => _resetQuiz(provider),
+            tooltip: 'Reset Quiz',
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

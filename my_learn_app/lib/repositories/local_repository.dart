@@ -3,12 +3,14 @@ import '../models/lesson.dart';
 import '../models/quiz_question.dart';
 import '../models/progress.dart';
 import '../models/completed_lesson.dart';
+import '../models/quiz_answer.dart';
 
 class LocalRepository {
   final Box<Lesson> _lessonBox = Hive.box<Lesson>('lessons');
   final Box<QuizQuestion> _quizBox = Hive.box<QuizQuestion>('quizzes');
   final Box<Progress> _progressBox = Hive.box<Progress>('progress');
   final Box<CompletedLesson> _completedLessonBox = Hive.box<CompletedLesson>('completed_lessons');
+  final Box<QuizAnswer> _quizAnswerBox = Hive.box<QuizAnswer>('quiz_answers');
 
   List<Lesson> getLessonsByCategory(String category) {
     return _lessonBox.values
@@ -31,6 +33,7 @@ class LocalRepository {
 
   Future<void> updateProgress(Progress progress) async {
     await _progressBox.put(progress.category, progress);
+    print('Updated progress for ${progress.category}: ${progress.quizScore}%'); // Debug
   }
 
   List<String> getCompletedLessonIds(String category) {
@@ -42,14 +45,13 @@ class LocalRepository {
     final completedLesson = _completedLessonBox.get(category) ??
         CompletedLesson(category: category);
     if (!completedLesson.lessonIds.contains(lessonId)) {
-      // Create a new list to ensure immutability is handled
       final updatedLessonIds = List<String>.from(completedLesson.lessonIds)..add(lessonId);
       final updatedCompletedLesson = CompletedLesson(
         category: category,
         lessonIds: updatedLessonIds,
       );
       await _completedLessonBox.put(category, updatedCompletedLesson);
-      print('Saved completed lesson: $lessonId for $category'); // Debug
+      print('Saved completed lesson: $lessonId for $category');
 
       final progress = _progressBox.get(category) ??
           Progress(category: category);
@@ -59,7 +61,57 @@ class LocalRepository {
         quizScore: progress.quizScore,
       );
       await _progressBox.put(category, updatedProgress);
-      print('Updated progress for $category: ${updatedLessonIds.length} lessons completed'); // Debug
+      print('Updated progress for $category: ${updatedLessonIds.length} lessons completed');
     }
+  }
+
+  Map<String, int> getQuizAnswers(String category) {
+    final quizAnswer = _quizAnswerBox.get(category);
+    return quizAnswer?.answeredQuestions ?? {};
+  }
+
+  Future<void> updateQuizAnswer(String category, String questionId, int selectedOption) async {
+    final quizAnswer = _quizAnswerBox.get(category) ??
+        QuizAnswer(category: category);
+    final updatedAnswers = Map<String, int>.from(quizAnswer.answeredQuestions)
+      ..[questionId] = selectedOption;
+    final updatedQuizAnswer = QuizAnswer(
+      category: category,
+      answeredQuestions: updatedAnswers,
+    );
+    await _quizAnswerBox.put(category, updatedQuizAnswer);
+    print('Saved quiz answer for $questionId in $category: $selectedOption');
+
+    // Update progress with current score
+    final questions = getQuizQuestionsByCategory(category);
+    final answers = getQuizAnswers(category);
+    int correctAnswers = 0;
+    for (var question in questions) {
+      final selectedOption = answers[question.id];
+      if (selectedOption != null && selectedOption == question.answer) {
+        correctAnswers++;
+      }
+    }
+    final quizScore = questions.isNotEmpty ? (correctAnswers / questions.length) * 100 : 0.0;
+    final progress = _progressBox.get(category) ?? Progress(category: category);
+    final updatedProgress = Progress(
+      category: category,
+      lessonsCompleted: progress.lessonsCompleted,
+      quizScore: quizScore,
+    );
+    await _progressBox.put(category, updatedProgress);
+    print('Updated quiz progress for $category: $quizScore%');
+  }
+
+  Future<void> resetQuizAnswers(String category) async {
+    await _quizAnswerBox.delete(category);
+    final progress = _progressBox.get(category) ?? Progress(category: category);
+    final updatedProgress = Progress(
+      category: category,
+      lessonsCompleted: progress.lessonsCompleted,
+      quizScore: 0.0,
+    );
+    await _progressBox.put(category, updatedProgress);
+    print('Reset quiz answers and progress for $category');
   }
 }

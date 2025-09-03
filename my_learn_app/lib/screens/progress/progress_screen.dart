@@ -10,7 +10,7 @@ class ProgressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context, listen: false);
-    appProvider.fetchProgress(); // Load progress data
+    appProvider.fetchProgress();
 
     return Scaffold(
       appBar: AppBar(
@@ -21,7 +21,7 @@ class ProgressScreen extends StatelessWidget {
         builder: (context, provider, child) {
           final progressList = provider.progressList;
           if (progressList.isEmpty) {
-            return const Center(child: Text('Start learning to track progress!'));
+            return const Center(child: Text('Start learning or take quizzes to track progress!'));
           }
           return ListView.builder(
             padding: const EdgeInsets.all(16.0),
@@ -70,7 +70,7 @@ class ProgressScreen extends StatelessWidget {
                           CircularPercentIndicator(
                             radius: 40.0,
                             lineWidth: 8.0,
-                            percent: progress.quizScore / 100,
+                            percent: progress.quizScore / 100.0, // Ensure correct scaling
                             center: Text(
                               '${progress.quizScore.toStringAsFixed(1)}%',
                               style: const TextStyle(fontSize: 16),

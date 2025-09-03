@@ -3,8 +3,6 @@ import '../constants/app_constants.dart';
 import '../screens/learn/learn_category_screen.dart';
 import '../screens/quiz/quiz_category_screen.dart';
 import '../screens/progress/progress_screen.dart';
-import '../widgets/category_card.dart';
-import '../screens/learn/learn_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const HomeContent(),
     const LearnCategoryScreen(),
-    const QuizCategoryScreen(), // Updated to category picker
+    const QuizCategoryScreen(),
     const ProgressScreen(),
   ];
 
@@ -33,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Learn Tech'),
+        title: const Text('Tech Basics'),
         centerTitle: true,
       ),
       body: _screens[_selectedIndex],
@@ -58,31 +56,39 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-          childAspectRatio: 1,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Tech Basics',
+          style: TextStyle(
+            fontSize: 36,
+            fontWeight: FontWeight.bold,
+            color: primaryColor,
+          ),
         ),
-        itemCount: categories.length,
-        itemBuilder: (context, index) {
-          final category = categories[index];
-          return CategoryCard(
-            category: category,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => LearnScreen(category: category),
-                ),
-              );
-            },
-          );
-        },
-      ),
+        const SizedBox(height: 16),
+        const Text(
+          'Learn Computer Fundamentals Anytime Anywhere',
+          style: TextStyle(
+            fontSize: 18,
+            fontStyle: FontStyle.italic,
+            color: Colors.black54,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        const Spacer(),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 32.0),
+          child: Text(
+            'Powered By - Satyarth Programming Hub',
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.grey[600],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

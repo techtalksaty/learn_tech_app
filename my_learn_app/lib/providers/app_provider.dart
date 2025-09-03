@@ -13,6 +13,7 @@ class AppProvider with ChangeNotifier {
   int _currentQuizScore = 0;
   int _totalQuizQuestions = 0;
   List<Progress> _progressList = [];
+  Map<String, List<String>> _completedLessonIds = {};
 
   List<Lesson> get lessons => _lessons;
   List<QuizQuestion> get quizQuestions => _quizQuestions;
@@ -21,6 +22,7 @@ class AppProvider with ChangeNotifier {
 
   void fetchLessons(String category) {
     _lessons = _repository.getLessonsByCategory(category);
+    _completedLessonIds[category] = _repository.getCompletedLessonIds(category);
     notifyListeners();
   }
 
@@ -47,7 +49,7 @@ class AppProvider with ChangeNotifier {
       quizScore: quizScore,
     );
     await _repository.updateProgress(updatedProgress);
-    fetchProgress(); // Refresh progress list
+    fetchProgress();
   }
 
   void fetchProgress() {
@@ -60,5 +62,17 @@ class AppProvider with ChangeNotifier {
 
   int getTotalLessons(String category) {
     return _repository.getLessonsByCategory(category).length;
+  }
+
+  bool isLessonCompleted(String category, String lessonId) {
+    return _completedLessonIds[category]?.contains(lessonId) ?? false;
+  }
+
+  Future<void> markLessonCompleted(String category, String lessonId) async {
+    await _repository.markLessonCompleted(category, lessonId);
+    _completedLessonIds[category] = _repository.getCompletedLessonIds(category);
+    print('Provider updated completed lessons for $category: ${_completedLessonIds[category]}'); // Debug
+    fetchProgress();
+    notifyListeners();
   }
 }

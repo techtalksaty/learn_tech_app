@@ -11,7 +11,7 @@ class LearnScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context, listen: false);
-    appProvider.fetchLessons(category); // Fetch lessons for the category
+    appProvider.fetchLessons(category);
 
     return Scaffold(
       appBar: AppBar(
@@ -29,16 +29,36 @@ class LearnScreen extends StatelessWidget {
             itemCount: lessons.length,
             itemBuilder: (context, index) {
               final lesson = lessons[index];
+              final isCompleted = provider.isLessonCompleted(category, lesson.id);
               return Card(
                 child: ExpansionTile(
                   title: Text(
                     lesson.question,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: isCompleted ? Colors.grey : Colors.black,
+                    ),
                   ),
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: MarkdownBody(data: lesson.answer),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          MarkdownBody(data: lesson.answer),
+                          const SizedBox(height: 8),
+                          ElevatedButton(
+                            onPressed: isCompleted
+                                ? null
+                                : () {
+                                    provider.markLessonCompleted(category, lesson.id);
+                                  },
+                            child: Text(
+                              isCompleted ? 'Completed' : 'Mark as Completed',
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

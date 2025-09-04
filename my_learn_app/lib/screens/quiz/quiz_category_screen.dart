@@ -10,8 +10,9 @@ class QuizCategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Quiz Categories'),
+        title: const Text('Quiz'),
         centerTitle: true,
+        backgroundColor: primaryColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

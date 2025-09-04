@@ -10,8 +10,9 @@ class LearnCategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Learn Categories'),
+        title: const Text('Learn'),
         centerTitle: true,
+        backgroundColor: primaryColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

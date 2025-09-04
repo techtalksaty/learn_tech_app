@@ -23,7 +23,11 @@ class CategoryCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.book, size: 40, color: primaryColor), // Placeholder icon
+              Icon(
+                categoryIcons[category] ?? Icons.book,
+                size: 40,
+                color: primaryColor,
+              ),
               const SizedBox(height: 8),
               Text(
                 category,

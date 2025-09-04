@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Tech Basics'),
         centerTitle: true,
+        backgroundColor: primaryColor,
       ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -76,6 +77,40 @@ class HomeContent extends StatelessWidget {
             color: Colors.black54,
           ),
           textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: 32),
+        SizedBox(
+          width: 250, // Fixed width for uniform button size
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: primaryColor,
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              textStyle: const TextStyle(fontSize: 18, color: Colors.white),
+              foregroundColor: Colors.white, // Text/icon color
+            ),
+            onPressed: () {
+              // Navigate to Learn tab (index 1)
+              context.findAncestorStateOfType<_HomeScreenState>()?._onItemTapped(1);
+            },
+            child: const Text('Continue Learning'),
+          ),
+        ),
+        const SizedBox(height: 16),
+        SizedBox(
+          width: 250, // Fixed width for uniform button size
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: primaryColor,
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              textStyle: const TextStyle(fontSize: 18, color: Colors.white),
+              foregroundColor: Colors.white, // Text/icon color
+            ),
+            onPressed: () {
+              // Navigate to Quiz tab (index 2)
+              context.findAncestorStateOfType<_HomeScreenState>()?._onItemTapped(2);
+            },
+            child: const Text('Start Quiz'),
+          ),
         ),
         const Spacer(),
         Padding(

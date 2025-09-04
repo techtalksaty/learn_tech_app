@@ -13,8 +13,8 @@ class AppProvider with ChangeNotifier {
   int _currentQuizScore = 0;
   int _totalQuizQuestions = 0;
   List<Progress> _progressList = [];
-  Map<String, List<String>> _completedLessonIds = {};
-  Map<String, Map<String, int>> _quizAnswers = {};
+  final Map<String, List<String>> _completedLessonIds = {};
+  final Map<String, Map<String, int>> _quizAnswers = {};
 
   List<Lesson> get lessons => _lessons;
   List<QuizQuestion> get quizQuestions => _quizQuestions;

@@ -131,7 +131,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           print('Selected option $value for question ${question.id}');
                         }),
               );
-            }).toList(),
+            }),
             if (_isSubmitted) ...[
               const SizedBox(height: 16),
               MarkdownBody(data: question.explanation),

@@ -31,7 +31,7 @@ class ProgressScreen extends StatelessWidget {
             );
           }
           return ListView.builder(
-            padding: const EdgeInsets.all(12.0), // Reduced padding
+            padding: const EdgeInsets.all(12.0),
             itemCount: progressList.length,
             itemBuilder: (context, index) {
               final progress = progressList[index];
@@ -43,47 +43,50 @@ class ProgressScreen extends StatelessWidget {
 
               return Card(
                 elevation: 4,
-                margin: const EdgeInsets.symmetric(vertical: 6.0), // Reduced margin
+                margin: const EdgeInsets.symmetric(vertical: 6.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0), // Reduced padding
+                  padding: const EdgeInsets.all(12.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        progress.category,
-                        style: const TextStyle(
-                          fontSize: 18, // Slightly smaller font
-                          fontWeight: FontWeight.bold,
-                          color: primaryColor,
-                        ),
+                      Row(
+                        children: [
+                          Icon(
+                            categoryIcons[progress.category] ?? Icons.book,
+                            size: 24,
+                            color: primaryColor,
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              progress.category,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: primaryColor,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 12), // Reduced spacing
+                      const SizedBox(height: 12),
                       Row(
                         children: [
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Row(
-                                  children: [
-                                    const Icon(Icons.book, size: 16, color: primaryColor), // Smaller icon
-                                    const SizedBox(width: 6), // Reduced spacing
-                                    Flexible(
-                                      child: Text(
-                                        'Lessons',
-                                        style: TextStyle(
-                                          fontSize: 14, // Smaller font
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.grey[800],
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
+                                Text(
+                                  'Lessons',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.grey[800],
+                                  ),
                                 ),
-                                const SizedBox(height: 6), // Reduced spacing
+                                const SizedBox(height: 6),
                                 LinearPercentIndicator(
-                                  lineHeight: 6.0, // Thinner bar
+                                  lineHeight: 6.0,
                                   percent: lessonProgress,
                                   backgroundColor: Colors.grey[300],
                                   progressColor: primaryColor,
@@ -94,38 +97,29 @@ class ProgressScreen extends StatelessWidget {
                                 Text(
                                   '${progress.lessonsCompleted}/$totalLessons',
                                   style: TextStyle(
-                                    fontSize: 12, // Smaller font
+                                    fontSize: 12,
                                     color: Colors.grey[600],
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          const SizedBox(width: 12), // Reduced spacing
+                          const SizedBox(width: 12),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Row(
-                                  children: [
-                                    const Icon(Icons.quiz, size: 16, color: primaryColor), // Smaller icon
-                                    const SizedBox(width: 6), // Reduced spacing
-                                    Flexible(
-                                      child: Text(
-                                        'Quiz',
-                                        style: TextStyle(
-                                          fontSize: 14, // Smaller font
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.grey[800],
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
+                                Text(
+                                  'Quiz',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.grey[800],
+                                  ),
                                 ),
-                                const SizedBox(height: 6), // Reduced spacing
+                                const SizedBox(height: 6),
                                 LinearPercentIndicator(
-                                  lineHeight: 6.0, // Thinner bar
+                                  lineHeight: 6.0,
                                   percent: quizProgress,
                                   backgroundColor: Colors.grey[300],
                                   progressColor: primaryColor,
@@ -136,7 +130,7 @@ class ProgressScreen extends StatelessWidget {
                                 Text(
                                   '${progress.quizScore.toStringAsFixed(1)}%',
                                   style: TextStyle(
-                                    fontSize: 12, // Smaller font
+                                    fontSize: 12,
                                     color: Colors.grey[600],
                                   ),
                                 ),

@@ -3,8 +3,6 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:provider/provider.dart';
 import '../../constants/app_constants.dart';
 import '../../providers/app_provider.dart';
-import '../learn/learn_screen.dart';
-import '../quiz/quiz_screen.dart';
 
 class ProgressScreen extends StatelessWidget {
   const ProgressScreen({super.key});
@@ -38,11 +36,6 @@ class ProgressScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final progress = progressList[index];
               final totalLessons = provider.getTotalLessons(progress.category);
-              final lessonProgress = totalLessons > 0
-                  ? progress.lessonsCompleted / totalLessons
-                  : 0.0;
-              final quizProgress = progress.quizScore / 100.0;
-
               return ProgressCard(
                 category: progress.category,
                 lessonsCompleted: progress.lessonsCompleted,

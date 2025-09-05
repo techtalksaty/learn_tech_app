@@ -39,7 +39,7 @@ class AppProvider with ChangeNotifier {
         _currentQuizScore++;
       }
     }
-    print('Fetched quiz for $category: $_currentQuizScore/$_totalQuizQuestions, answers: ${_quizAnswers[category]}');
+  
     notifyListeners();
   }
 
@@ -53,7 +53,6 @@ class AppProvider with ChangeNotifier {
         _currentQuizScore++;
       }
     }
-    print('Updated quiz answer for $category, score: $_currentQuizScore/$_totalQuizQuestions, answers: ${_quizAnswers[category]}');
     notifyListeners();
   }
 
@@ -66,7 +65,6 @@ class AppProvider with ChangeNotifier {
       quizScore: quizScore,
     );
     await _repository.updateProgress(updatedProgress);
-    print('Saved quiz progress for $category: ${quizScore.toStringAsFixed(1)}%');
     fetchProgress();
   }
 
@@ -75,7 +73,6 @@ class AppProvider with ChangeNotifier {
         .map((category) => _repository.getProgressByCategory(category) ??
             Progress(category: category))
         .toList();
-    print('Fetched progress: ${_progressList.map((p) => "${p.category}: ${p.quizScore}%").toList()}');
     notifyListeners();
   }
 
@@ -90,7 +87,6 @@ class AppProvider with ChangeNotifier {
   Future<void> markLessonCompleted(String category, String lessonId) async {
     await _repository.markLessonCompleted(category, lessonId);
     _completedLessonIds[category] = _repository.getCompletedLessonIds(category);
-    print('Provider updated completed lessons for $category: ${_completedLessonIds[category]}');
     fetchProgress();
     notifyListeners();
   }
@@ -100,7 +96,6 @@ class AppProvider with ChangeNotifier {
     _quizAnswers[category] = {};
     _currentQuizScore = 0;
     await saveQuizProgress(category);
-    print('Reset quiz for $category');
     notifyListeners();
   }
 }

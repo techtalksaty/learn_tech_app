@@ -33,7 +33,6 @@ class LocalRepository {
 
   Future<void> updateProgress(Progress progress) async {
     await _progressBox.put(progress.category, progress);
-    print('Updated progress for ${progress.category}: ${progress.quizScore}%');
   }
 
   List<String> getCompletedLessonIds(String category) {
@@ -51,7 +50,6 @@ class LocalRepository {
         lessonIds: updatedLessonIds,
       );
       await _completedLessonBox.put(category, updatedCompletedLesson);
-      print('Saved completed lesson: $lessonId for $category');
 
       final progress = _progressBox.get(category) ??
           Progress(category: category);
@@ -61,13 +59,11 @@ class LocalRepository {
         quizScore: progress.quizScore,
       );
       await _progressBox.put(category, updatedProgress);
-      print('Updated progress for $category: ${updatedLessonIds.length} lessons completed');
     }
   }
 
   Map<String, int> getQuizAnswers(String category) {
     final quizAnswer = _quizAnswerBox.get(category);
-    print('Retrieved quiz answers for $category: ${quizAnswer?.answeredQuestions}');
     return quizAnswer?.answeredQuestions ?? {};
   }
 
@@ -81,7 +77,6 @@ class LocalRepository {
       answeredQuestions: updatedAnswers,
     );
     await _quizAnswerBox.put(category, updatedQuizAnswer);
-    print('Saved quiz answer for $questionId in $category: $selectedOption');
 
     // Update progress with current score
     final questions = getQuizQuestionsByCategory(category);
@@ -101,7 +96,6 @@ class LocalRepository {
       quizScore: quizScore,
     );
     await _progressBox.put(category, updatedProgress);
-    print('Updated quiz progress for $category: $quizScore%');
   }
 
   Future<void> resetQuizAnswers(String category) async {
@@ -112,7 +106,6 @@ class LocalRepository {
       lessonsCompleted: progress.lessonsCompleted,
       quizScore: 0.0,
     );
-    await _progressBox.put(category, updatedProgress);
-    print('Reset quiz answers and progress for $category');
+    await _progressBox.put(category, updatedProgress); 
   }
 }

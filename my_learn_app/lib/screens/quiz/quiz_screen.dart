@@ -26,7 +26,9 @@ class _QuizScreenState extends State<QuizScreen> {
     // Initialize state for the first question
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _selectedOption = provider.quizAnswers(widget.category)[provider.quizQuestions[_currentQuestionIndex].id];
+        _selectedOption = provider.quizAnswers(
+          widget.category,
+        )[provider.quizQuestions[_currentQuestionIndex].id];
         _isSubmitted = _selectedOption != null;
       });
     });
@@ -44,9 +46,10 @@ class _QuizScreenState extends State<QuizScreen> {
     if (_currentQuestionIndex < provider.quizQuestions.length - 1) {
       setState(() {
         _currentQuestionIndex++;
-        _selectedOption = provider.quizAnswers(widget.category)[provider.quizQuestions[_currentQuestionIndex].id];
+        _selectedOption = provider.quizAnswers(
+          widget.category,
+        )[provider.quizQuestions[_currentQuestionIndex].id];
         _isSubmitted = _selectedOption != null;
-        print('Navigated to question ${_currentQuestionIndex + 1}, selected: $_selectedOption, submitted: $_isSubmitted');
       });
     } else {
       provider.saveQuizProgress(widget.category);
@@ -54,7 +57,9 @@ class _QuizScreenState extends State<QuizScreen> {
         context: context,
         builder: (context) => AlertDialog(
           title: const Text('Quiz Completed'),
-          content: Text('Your score: ${provider.quizScore.toStringAsFixed(1)}%'),
+          content: Text(
+            'Your score: ${provider.quizScore.toStringAsFixed(1)}%',
+          ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -73,7 +78,6 @@ class _QuizScreenState extends State<QuizScreen> {
       _selectedOption = null;
       _isSubmitted = false;
     });
-    print('Reset quiz for ${widget.category}');
   }
 
   @override
@@ -112,10 +116,7 @@ class _QuizScreenState extends State<QuizScreen> {
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-            Text(
-              question.question,
-              style: const TextStyle(fontSize: 16),
-            ),
+            Text(question.question, style: const TextStyle(fontSize: 16)),
             const SizedBox(height: 16),
             ...question.options.asMap().entries.map((entry) {
               final index = entry.key;
@@ -126,10 +127,11 @@ class _QuizScreenState extends State<QuizScreen> {
                 groupValue: _selectedOption,
                 onChanged: _isSubmitted
                     ? null
-                    : (value) => setState(() {
+                    : (value) {
+                        setState(() {
                           _selectedOption = value;
-                          print('Selected option $value for question ${question.id}');
-                        }),
+                        });
+                      },
               );
             }),
             if (_isSubmitted) ...[
@@ -139,7 +141,9 @@ class _QuizScreenState extends State<QuizScreen> {
               Text(
                 _selectedOption == question.answer ? 'Correct!' : 'Incorrect',
                 style: TextStyle(
-                  color: _selectedOption == question.answer ? Colors.green : Colors.red,
+                  color: _selectedOption == question.answer
+                      ? Colors.green
+                      : Colors.red,
                   fontWeight: FontWeight.bold,
                 ),
               ),

@@ -14,6 +14,7 @@ class QuizCategoryScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: primaryColor,
       ),
+      backgroundColor: Colors.orange[50], // Light cream/orange background
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
@@ -26,16 +27,31 @@ class QuizCategoryScreen extends StatelessWidget {
           itemCount: categories.length,
           itemBuilder: (context, index) {
             final category = categories[index];
-            return CategoryCard(
-              category: category,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => QuizScreen(category: category),
-                  ),
-                );
-              },
+            return AnimatedOpacity(
+              opacity: 1.0,
+              duration: const Duration(milliseconds: 300),
+              child: CategoryCard(
+                category: category,
+                borderColor: Colors.orange, // Orange border
+                cardColor: Colors.orange[100], // Light orange tint
+                textColor: Colors.orange[800], // Dark orange text/icon
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          QuizScreen(category: category),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
             );
           },
         ),

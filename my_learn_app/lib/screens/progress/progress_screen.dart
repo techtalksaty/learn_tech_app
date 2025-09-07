@@ -20,6 +20,7 @@ class ProgressScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: primaryColor,
       ),
+      backgroundColor: Colors.grey[100], // Light grey background
       body: Consumer<AppProvider>(
         builder: (context, provider, child) {
           final progressList = provider.progressList;
@@ -38,39 +39,47 @@ class ProgressScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final progress = progressList[index];
               final totalLessons = provider.getTotalLessons(progress.category);
-              return ProgressCard(
-                category: progress.category,
-                lessonsCompleted: progress.lessonsCompleted,
-                totalLessons: totalLessons,
-                quizScore: progress.quizScore,
-                onLessonTap: () {
-                  Navigator.push(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => LearnScreen(category: progress.category),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                        return FadeTransition(
-                          opacity: animation,
-                          child: child,
-                        );
-                      },
-                    ),
-                  );
-                },
-                onQuizTap: () {
-                  Navigator.push(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => QuizScreen(category: progress.category),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                        return FadeTransition(
-                          opacity: animation,
-                          child: child,
-                        );
-                      },
-                    ),
-                  );
-                },
+              return AnimatedOpacity(
+                opacity: 1.0,
+                duration: const Duration(milliseconds: 300),
+                child: ProgressCard(
+                  category: progress.category,
+                  lessonsCompleted: progress.lessonsCompleted,
+                  totalLessons: totalLessons,
+                  quizScore: progress.quizScore,
+                  onLessonTap: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            LearnScreen(category: progress.category),
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: child,
+                          );
+                        },
+                      ),
+                    );
+                  },
+                  onQuizTap: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            QuizScreen(category: progress.category),
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: child,
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
               );
             },
           );
@@ -144,7 +153,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                 Icon(
                   categoryIcons[widget.category] ?? Icons.book,
                   size: 24,
-                  color: primaryColor,
+                  color: primaryColor, // Unchanged heading
                 ),
                 const SizedBox(width: 8),
                 Expanded(
@@ -153,7 +162,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: primaryColor,
+                      color: primaryColor, // Unchanged heading
                     ),
                   ),
                 ),
@@ -171,7 +180,12 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                     },
                     onTapCancel: () => _controller.reverse(),
                     child: Container(
-                      color: Colors.transparent, // Ensures full area is tappable
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        color: Colors.green[50], // Light green background
+                        border: Border.all(color: Colors.green, width: 2), // Green border
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       child: ScaleTransition(
                         scale: _scaleAnimation,
                         child: Column(
@@ -182,7 +196,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.grey[800],
+                                color: Colors.green[800], // Dark green label
                               ),
                             ),
                             const SizedBox(height: 6),
@@ -190,7 +204,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               lineHeight: 6.0,
                               percent: lessonProgress,
                               backgroundColor: Colors.grey[300],
-                              progressColor: primaryColor,
+                              progressColor: Colors.green[600], // Green progress bar
                               animation: true,
                               animationDuration: 500,
                             ),
@@ -199,7 +213,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               '${widget.lessonsCompleted}/${widget.totalLessons}',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey[600],
+                                color: Colors.green[600], // Green progress text
                               ),
                             ),
                           ],
@@ -218,7 +232,12 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                     },
                     onTapCancel: () => _controller.reverse(),
                     child: Container(
-                      color: Colors.transparent, // Ensures full area is tappable
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        color: Colors.orange[100], // Light orange background
+                        border: Border.all(color: Colors.orange, width: 2), // Orange border
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       child: ScaleTransition(
                         scale: _scaleAnimation,
                         child: Column(
@@ -229,7 +248,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.grey[800],
+                                color: Colors.orange[800], // Dark orange label
                               ),
                             ),
                             const SizedBox(height: 6),
@@ -237,7 +256,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               lineHeight: 6.0,
                               percent: quizProgress,
                               backgroundColor: Colors.grey[300],
-                              progressColor: primaryColor,
+                              progressColor: Colors.orange[600], // Orange progress bar
                               animation: true,
                               animationDuration: 500,
                             ),
@@ -246,7 +265,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               '${widget.quizScore.toStringAsFixed(1)}%',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey[600],
+                                color: Colors.orange[600], // Orange progress text
                               ),
                             ),
                           ],

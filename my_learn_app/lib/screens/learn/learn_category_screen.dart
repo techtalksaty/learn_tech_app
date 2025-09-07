@@ -14,6 +14,7 @@ class LearnCategoryScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: primaryColor,
       ),
+      backgroundColor: Colors.grey[100], // Light grey background
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
@@ -26,16 +27,31 @@ class LearnCategoryScreen extends StatelessWidget {
           itemCount: categories.length,
           itemBuilder: (context, index) {
             final category = categories[index];
-            return CategoryCard(
-              category: category,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LearnScreen(category: category),
-                  ),
-                );
-              },
+            return AnimatedOpacity(
+              opacity: 1.0,
+              duration: const Duration(milliseconds: 300),
+              child: CategoryCard(
+                category: category,
+                borderColor: Colors.green, // Green border
+                cardColor: Colors.green[50], // Light green tint
+                textColor: Colors.green[800], // Dark green text/icon
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          LearnScreen(category: category),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
             );
           },
         ),

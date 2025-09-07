@@ -4,10 +4,16 @@ import '../constants/app_constants.dart';
 class CategoryCard extends StatefulWidget {
   final String category;
   final VoidCallback onTap;
+  final Color? borderColor; // Custom border color
+  final Color? cardColor; // Custom card background
+  final Color? textColor; // Custom text/icon color
 
   const CategoryCard({
     required this.category,
     required this.onTap,
+    this.borderColor,
+    this.cardColor,
+    this.textColor,
     super.key,
   });
 
@@ -50,7 +56,14 @@ class _CategoryCardState extends State<CategoryCard> with SingleTickerProviderSt
         scale: _scaleAnimation,
         child: Card(
           elevation: 4,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(
+              color: widget.borderColor ?? Colors.grey[300]!, // Default grey border
+              width: 2,
+            ),
+          ),
+          color: widget.cardColor ?? Colors.white, // Default white background
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -59,14 +72,15 @@ class _CategoryCardState extends State<CategoryCard> with SingleTickerProviderSt
                 Icon(
                   categoryIcons[widget.category] ?? Icons.book,
                   size: 40,
-                  color: primaryColor,
+                  color: widget.textColor ?? primaryColor, // Default primaryColor
                 ),
                 const SizedBox(height: 8),
                 Text(
                   widget.category,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
+                    color: widget.textColor ?? Colors.black, // Default black text
                   ),
                   textAlign: TextAlign.center,
                 ),

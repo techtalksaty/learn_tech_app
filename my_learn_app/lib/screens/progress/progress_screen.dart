@@ -20,7 +20,7 @@ class ProgressScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: primaryColor,
       ),
-      backgroundColor: Colors.grey[100], // Light grey background
+      backgroundColor: Colors.blueGrey[50], // Unified blue-grey background
       body: Consumer<AppProvider>(
         builder: (context, provider, child) {
           final progressList = provider.progressList;
@@ -182,8 +182,8 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                     child: Container(
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        color: Colors.green[50], // Light green background
-                        border: Border.all(color: Colors.green, width: 2), // Green border
+                        color: Colors.blue[100], // Light blue background
+                        border: Border.all(color: Colors.blue, width: 2), // Blue border
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: ScaleTransition(
@@ -196,7 +196,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.green[800], // Dark green label
+                                color: Colors.blue[800], // Dark blue label
                               ),
                             ),
                             const SizedBox(height: 6),
@@ -204,7 +204,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               lineHeight: 6.0,
                               percent: lessonProgress,
                               backgroundColor: Colors.grey[300],
-                              progressColor: Colors.green[600], // Green progress bar
+                              progressColor: Colors.blue[600], // Blue progress bar
                               animation: true,
                               animationDuration: 500,
                             ),
@@ -213,7 +213,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               '${widget.lessonsCompleted}/${widget.totalLessons}',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.green[600], // Green progress text
+                                color: Colors.blue[600], // Blue progress text
                               ),
                             ),
                           ],
@@ -234,8 +234,8 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                     child: Container(
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        color: Colors.orange[100], // Light orange background
-                        border: Border.all(color: Colors.orange, width: 2), // Orange border
+                        color: Colors.indigo[100], // Light indigo background
+                        border: Border.all(color: Colors.indigo, width: 2), // Indigo border
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: ScaleTransition(
@@ -248,7 +248,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.orange[800], // Dark orange label
+                                color: Colors.indigo[800], // Dark indigo label
                               ),
                             ),
                             const SizedBox(height: 6),
@@ -256,7 +256,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               lineHeight: 6.0,
                               percent: quizProgress,
                               backgroundColor: Colors.grey[300],
-                              progressColor: Colors.orange[600], // Orange progress bar
+                              progressColor: Colors.indigo[600], // Indigo progress bar
                               animation: true,
                               animationDuration: 500,
                             ),
@@ -265,7 +265,7 @@ class _ProgressCardState extends State<ProgressCard> with SingleTickerProviderSt
                               '${widget.quizScore.toStringAsFixed(1)}%',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.orange[600], // Orange progress text
+                                color: Colors.indigo[600], // Indigo progress text
                               ),
                             ),
                           ],

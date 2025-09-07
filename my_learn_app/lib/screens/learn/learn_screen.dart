@@ -20,7 +20,7 @@ class LearnScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: primaryColor,
       ),
-      backgroundColor: Colors.grey[100], // Light grey background
+      backgroundColor: Colors.blueGrey[50], // Unified blue-grey background
       body: Consumer<AppProvider>(
         builder: (context, provider, child) {
           final lessons = provider.lessons;
@@ -40,16 +40,16 @@ class LearnScreen extends StatelessWidget {
                   elevation: 4,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
-                    side: const BorderSide(color: Colors.green, width: 2), // Green border
+                    side: const BorderSide(color: Colors.blue, width: 2), // Blue border
                   ),
-                  color: Colors.green[50], // Light green tint
+                  color: Colors.blue[100], // Light blue background
                   margin: const EdgeInsets.symmetric(vertical: 8.0),
                   child: ExpansionTile(
                     title: Text(
                       lesson.question,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: isCompleted ? Colors.grey : Colors.green[800], // Dark green for uncompleted
+                        color: isCompleted ? Colors.grey : Colors.blue[800], // Dark blue for uncompleted
                       ),
                     ),
                     children: [
@@ -67,7 +67,7 @@ class LearnScreen extends StatelessWidget {
                                       provider.markLessonCompleted(category, lesson.id);
                                     },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.green[600], // Green button
+                                backgroundColor: Colors.blue[600], // Blue button
                                 foregroundColor: Colors.white,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8),

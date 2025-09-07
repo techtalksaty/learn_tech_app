@@ -14,7 +14,7 @@ class QuizCategoryScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: primaryColor,
       ),
-      backgroundColor: Colors.orange[50], // Light cream/orange background
+      backgroundColor: Colors.blueGrey[50], // Unified blue-grey background
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
@@ -32,9 +32,9 @@ class QuizCategoryScreen extends StatelessWidget {
               duration: const Duration(milliseconds: 300),
               child: CategoryCard(
                 category: category,
-                borderColor: Colors.orange, // Orange border
-                cardColor: Colors.orange[100], // Light orange tint
-                textColor: Colors.orange[800], // Dark orange text/icon
+                borderColor: Colors.indigo, // Indigo border
+                cardColor: Colors.indigo[100], // Light indigo background
+                textColor: Colors.indigo[800], // Dark indigo text/icon
                 onTap: () {
                   Navigator.push(
                     context,

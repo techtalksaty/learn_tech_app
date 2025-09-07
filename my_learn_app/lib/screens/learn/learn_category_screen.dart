@@ -14,7 +14,7 @@ class LearnCategoryScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: primaryColor,
       ),
-      backgroundColor: Colors.grey[100], // Light grey background
+      backgroundColor: Colors.blueGrey[50], // Unified blue-grey background
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
@@ -32,9 +32,9 @@ class LearnCategoryScreen extends StatelessWidget {
               duration: const Duration(milliseconds: 300),
               child: CategoryCard(
                 category: category,
-                borderColor: Colors.green, // Green border
-                cardColor: Colors.green[50], // Light green tint
-                textColor: Colors.green[800], // Dark green text/icon
+                borderColor: Colors.blue, // Blue border
+                cardColor: Colors.blue[100], // Light blue background
+                textColor: Colors.blue[800], // Dark blue text/icon
                 onTap: () {
                   Navigator.push(
                     context,

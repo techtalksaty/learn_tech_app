@@ -38,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: primaryColor,
       ),
+      backgroundColor: Colors.blueGrey[50], // Unified blue-grey background
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
@@ -93,110 +94,130 @@ class HomeContent extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 32),
-            Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              margin: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Your Progress',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: primaryColor,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Lessons',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.grey[800],
-                                ),
-                              ),
-                              const SizedBox(height: 6),
-                              LinearPercentIndicator(
-                                lineHeight: 6.0,
-                                percent: lessonProgress,
-                                backgroundColor: Colors.grey[300],
-                                progressColor: primaryColor,
-                                animation: true,
-                                animationDuration: 500,
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                '$totalLessonsCompleted/$totalLessons',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.grey[600],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Quiz',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.grey[800],
-                                ),
-                              ),
-                              const SizedBox(height: 6),
-                              LinearPercentIndicator(
-                                lineHeight: 6.0,
-                                percent: averageQuizScore / 100.0,
-                                backgroundColor: Colors.grey[300],
-                                progressColor: primaryColor,
-                                animation: true,
-                                animationDuration: 500,
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                '${averageQuizScore.toStringAsFixed(1)}%',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.grey[600],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 12),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {
-                          context.findAncestorStateOfType<_HomeScreenState>()?._onItemTapped(3);
-                        },
-                        child: Text(
-                          'View Details',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: primaryColor,
-                          ),
+            AnimatedOpacity(
+              opacity: 1.0,
+              duration: const Duration(milliseconds: 300),
+              child: Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Your Progress',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: primaryColor,
                         ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: 12),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              padding: const EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                color: Colors.blue[100], // Light blue background
+                                border: Border.all(color: Colors.blue, width: 2), // Blue border
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Lessons',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.blue[800], // Dark blue label
+                                    ),
+                                  ),
+                                  const SizedBox(height: 6),
+                                  LinearPercentIndicator(
+                                    lineHeight: 6.0,
+                                    percent: lessonProgress,
+                                    backgroundColor: Colors.grey[300],
+                                    progressColor: Colors.blue[600], // Blue progress bar
+                                    animation: true,
+                                    animationDuration: 500,
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    '$totalLessonsCompleted/$totalLessons',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.blue[600], // Blue progress text
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Container(
+                              padding: const EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                color: Colors.indigo[100], // Light indigo background
+                                border: Border.all(color: Colors.indigo, width: 2), // Indigo border
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Quiz',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.indigo[800], // Dark indigo label
+                                    ),
+                                  ),
+                                  const SizedBox(height: 6),
+                                  LinearPercentIndicator(
+                                    lineHeight: 6.0,
+                                    percent: averageQuizScore / 100.0,
+                                    backgroundColor: Colors.grey[300],
+                                    progressColor: Colors.indigo[600], // Indigo progress bar
+                                    animation: true,
+                                    animationDuration: 500,
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    '${averageQuizScore.toStringAsFixed(1)}%',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.indigo[600], // Indigo progress text
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 12),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            context.findAncestorStateOfType<_HomeScreenState>()?._onItemTapped(3);
+                          },
+                          child: Text(
+                            'View Details',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: primaryColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -205,7 +226,7 @@ class HomeContent extends StatelessWidget {
               width: 250,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: Colors.blue[600], // Blue for Lessons
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   textStyle: const TextStyle(fontSize: 18, color: Colors.white),
                   foregroundColor: Colors.white,
@@ -221,7 +242,7 @@ class HomeContent extends StatelessWidget {
               width: 250,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: Colors.indigo[600], // Indigo for Quiz
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   textStyle: const TextStyle(fontSize: 18, color: Colors.white),
                   foregroundColor: Colors.white,

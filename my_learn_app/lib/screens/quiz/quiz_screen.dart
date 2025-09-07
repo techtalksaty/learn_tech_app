@@ -111,7 +111,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
         ],
       ),
-      backgroundColor: Colors.orange[50], // Light cream/orange background
+      backgroundColor: Colors.blueGrey[50], // Unified blue-grey background
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: AnimatedOpacity(
@@ -121,9 +121,9 @@ class _QuizScreenState extends State<QuizScreen> {
             elevation: 4,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
-              side: const BorderSide(color: Colors.orange, width: 2), // Orange border
+              side: const BorderSide(color: Colors.indigo, width: 2), // Indigo border
             ),
-            color: Colors.orange[100], // Light orange tint
+            color: Colors.indigo[100], // Light indigo background
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -131,10 +131,10 @@ class _QuizScreenState extends State<QuizScreen> {
                 children: [
                   Text(
                     'Question ${_currentQuestionIndex + 1}/${questions.length}',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.orangeAccent, // Orange accent for question count
+                      color: Colors.indigo[800], // Dark indigo for question count
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -154,13 +154,13 @@ class _QuizScreenState extends State<QuizScreen> {
                       decoration: BoxDecoration(
                         color: Colors.white, // White background for options
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.orange[300]!), // Light orange border
+                        border: Border.all(color: Colors.indigo[300]!), // Light indigo border
                       ),
                       child: RadioListTile<int>(
                         title: Text(option),
                         value: index,
                         groupValue: _selectedOption,
-                        activeColor: Colors.orange[600], // Orange radio button
+                        activeColor: Colors.indigo[600], // Indigo radio button
                         onChanged: _isSubmitted
                             ? null
                             : (value) {
@@ -191,7 +191,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         ? () => _nextQuestion(provider)
                         : () => _submitAnswer(provider, question),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orange[600], // Orange button
+                      backgroundColor: Colors.indigo[600], // Indigo button
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),

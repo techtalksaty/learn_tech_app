@@ -3,8 +3,8 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:provider/provider.dart';
 import '../constants/app_constants.dart';
 import '../screens/learn/learn_category_screen.dart';
-import '../screens/quiz/quiz_category_screen.dart';
-import '../screens/progress/progress_screen.dart';
+import '../screens/quiz/quiz_category_screen.dart' as quiz;
+import '../screens/progress/progress_screen.dart' as progress;
 import '../providers/app_provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const HomeContent(),
     const LearnCategoryScreen(),
-    const QuizCategoryScreen(),
-    const ProgressScreen(),
+    quiz.QuizCategoryScreen(),
+    progress.ProgressScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -95,6 +95,7 @@ class HomeContent extends StatelessWidget {
             const SizedBox(height: 32),
             Card(
               elevation: 4,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               margin: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -178,6 +179,22 @@ class HomeContent extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                    const SizedBox(height: 12),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: () {
+                          context.findAncestorStateOfType<_HomeScreenState>()?._onItemTapped(3);
+                        },
+                        child: Text(
+                          'View Details',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: primaryColor,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

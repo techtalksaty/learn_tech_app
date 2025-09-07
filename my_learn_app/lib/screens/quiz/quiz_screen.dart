@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:provider/provider.dart';
+import '../../constants/app_constants.dart';
 import '../../models/quiz_question.dart';
 import '../../providers/app_provider.dart';
 
@@ -23,7 +24,6 @@ class _QuizScreenState extends State<QuizScreen> {
     super.initState();
     final provider = Provider.of<AppProvider>(context, listen: false);
     provider.fetchQuizQuestions(widget.category);
-    // Initialize state for the first question
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
         _selectedOption = provider.quizAnswers(
@@ -87,7 +87,11 @@ class _QuizScreenState extends State<QuizScreen> {
 
     if (questions.isEmpty) {
       return Scaffold(
-        appBar: AppBar(title: Text('Quiz: ${widget.category}')),
+        appBar: AppBar(
+          title: Text('Quiz: ${widget.category}'),
+          centerTitle: true,
+          backgroundColor: primaryColor,
+        ),
         body: const Center(child: Text('No quiz questions available')),
       );
     }
@@ -98,6 +102,7 @@ class _QuizScreenState extends State<QuizScreen> {
       appBar: AppBar(
         title: Text('Quiz: ${widget.category}'),
         centerTitle: true,
+        backgroundColor: primaryColor,
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
@@ -106,56 +111,98 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
         ],
       ),
+      backgroundColor: Colors.orange[50], // Light cream/orange background
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Question ${_currentQuestionIndex + 1}/${questions.length}',
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        child: AnimatedOpacity(
+          opacity: 1.0,
+          duration: const Duration(milliseconds: 300),
+          child: Card(
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+              side: const BorderSide(color: Colors.orange, width: 2), // Orange border
             ),
-            const SizedBox(height: 16),
-            Text(question.question, style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 16),
-            ...question.options.asMap().entries.map((entry) {
-              final index = entry.key;
-              final option = entry.value;
-              return RadioListTile<int>(
-                title: Text(option),
-                value: index,
-                groupValue: _selectedOption,
-                onChanged: _isSubmitted
-                    ? null
-                    : (value) {
-                        setState(() {
-                          _selectedOption = value;
-                        });
-                      },
-              );
-            }),
-            if (_isSubmitted) ...[
-              const SizedBox(height: 16),
-              MarkdownBody(data: question.explanation),
-              const SizedBox(height: 16),
-              Text(
-                _selectedOption == question.answer ? 'Correct!' : 'Incorrect',
-                style: TextStyle(
-                  color: _selectedOption == question.answer
-                      ? Colors.green
-                      : Colors.red,
-                  fontWeight: FontWeight.bold,
-                ),
+            color: Colors.orange[100], // Light orange tint
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Question ${_currentQuestionIndex + 1}/${questions.length}',
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.orangeAccent, // Orange accent for question count
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    question.question,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  ...question.options.asMap().entries.map((entry) {
+                    final index = entry.key;
+                    final option = entry.value;
+                    return Container(
+                      margin: const EdgeInsets.symmetric(vertical: 4.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white, // White background for options
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Colors.orange[300]!), // Light orange border
+                      ),
+                      child: RadioListTile<int>(
+                        title: Text(option),
+                        value: index,
+                        groupValue: _selectedOption,
+                        activeColor: Colors.orange[600], // Orange radio button
+                        onChanged: _isSubmitted
+                            ? null
+                            : (value) {
+                                setState(() {
+                                  _selectedOption = value;
+                                });
+                              },
+                      ),
+                    );
+                  }),
+                  if (_isSubmitted) ...[
+                    const SizedBox(height: 16),
+                    MarkdownBody(data: question.explanation),
+                    const SizedBox(height: 16),
+                    Text(
+                      _selectedOption == question.answer ? 'Correct!' : 'Incorrect',
+                      style: TextStyle(
+                        color: _selectedOption == question.answer
+                            ? Colors.green
+                            : Colors.red,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                  const Spacer(),
+                  ElevatedButton(
+                    onPressed: _isSubmitted
+                        ? () => _nextQuestion(provider)
+                        : () => _submitAnswer(provider, question),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange[600], // Orange button
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: Text(_isSubmitted ? 'Next' : 'Submit'),
+                  ),
+                ],
               ),
-            ],
-            const Spacer(),
-            ElevatedButton(
-              onPressed: _isSubmitted
-                  ? () => _nextQuestion(provider)
-                  : () => _submitAnswer(provider, question),
-              child: Text(_isSubmitted ? 'Next' : 'Submit'),
             ),
-          ],
+          ),
         ),
       ),
     );

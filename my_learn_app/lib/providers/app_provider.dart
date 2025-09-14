@@ -39,7 +39,6 @@ class AppProvider with ChangeNotifier {
         _currentQuizScore++;
       }
     }
-  
     notifyListeners();
   }
 
@@ -86,9 +85,10 @@ class AppProvider with ChangeNotifier {
 
   Future<void> markLessonCompleted(String category, String lessonId) async {
     await _repository.markLessonCompleted(category, lessonId);
-    _completedLessonIds[category] = _repository.getCompletedLessonIds(category);
+    // Create new list instance to ensure change detection
+    _completedLessonIds[category] = List<String>.from(_repository.getCompletedLessonIds(category));
+    notifyListeners(); // Notify before fetchProgress to ensure immediate UI update
     fetchProgress();
-    notifyListeners();
   }
 
   Future<void> resetQuiz(String category) async {

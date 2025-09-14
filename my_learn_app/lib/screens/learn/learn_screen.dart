@@ -4,19 +4,30 @@ import 'package:provider/provider.dart';
 import '../../constants/app_constants.dart';
 import '../../providers/app_provider.dart';
 
-class LearnScreen extends StatelessWidget {
+class LearnScreen extends StatefulWidget {
   final String category;
 
   const LearnScreen({required this.category, super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final appProvider = Provider.of<AppProvider>(context, listen: false);
-    appProvider.fetchLessons(category);
+  State<LearnScreen> createState() => _LearnScreenState();
+}
 
+class _LearnScreenState extends State<LearnScreen> {
+  final Map<String, bool> _localCompletionStatus = {};
+
+  @override
+  void initState() {
+    super.initState();
+    final appProvider = Provider.of<AppProvider>(context, listen: false);
+    appProvider.fetchLessons(widget.category);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Learn: $category'),
+        title: Text('Learn: ${widget.category}'),
         centerTitle: true,
         backgroundColor: primaryColor,
       ),
@@ -32,7 +43,9 @@ class LearnScreen extends StatelessWidget {
             itemCount: lessons.length,
             itemBuilder: (context, index) {
               final lesson = lessons[index];
-              final isCompleted = provider.isLessonCompleted(category, lesson.id);
+              // Use local state, fallback to provider
+              final isCompleted = _localCompletionStatus[lesson.id] ??
+                  provider.isLessonCompleted(widget.category, lesson.id);
               return AnimatedOpacity(
                 opacity: 1.0,
                 duration: const Duration(milliseconds: 300),
@@ -64,7 +77,10 @@ class LearnScreen extends StatelessWidget {
                               onPressed: isCompleted
                                   ? null
                                   : () {
-                                      provider.markLessonCompleted(category, lesson.id);
+                                      setState(() {
+                                        _localCompletionStatus[lesson.id] = true; // Optimistic update
+                                      });
+                                      provider.markLessonCompleted(widget.category, lesson.id);
                                     },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.blue[600], // Blue button

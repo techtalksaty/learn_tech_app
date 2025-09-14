@@ -1,4 +1,4 @@
-package com.example.my_learn_app
+package com.satyarthprogramminghub.techbasics
 
 import io.flutter.embedding.android.FlutterActivity
 
